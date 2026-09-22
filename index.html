@@ -9,102 +9,94 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Apóstola Patricia Santana | Ministério Apostólico</title>
+    <title>Apóstola Patricia Santana</title>
 
     <meta
         name="description"
         content="Site oficial da Apóstola Patricia Santana - Ministério Apostólico."
     >
 
-    <link rel="stylesheet" href="./style.css?v=10">
+    <link rel="stylesheet" href="style.css?v=20">
 </head>
-
 
 <body>
 
-
-    <!-- =====================================================
+    <!-- ==========================================
          CABEÇALHO
-    ====================================================== -->
+    =========================================== -->
 
-    <header class="site-header">
+    <header class="header">
 
-        <div class="header-inner">
-
+        <div class="header-container">
 
             <!-- LOGO -->
 
             <a
                 href="index.html"
-                class="brand"
-                aria-label="Patricia Santana - Página Inicial"
+                class="header-logo"
+                aria-label="Página inicial"
             >
 
                 <img
-                    src="./logo-patricia.png"
-                    alt="Patricia Santana - Ministério Apostólico"
+                    src="logo-patricia.png"
+                    alt="Apóstola Patricia Santana - Ministério Apostólico"
                 >
 
             </a>
 
 
-
             <!-- MENU -->
 
             <nav
-                class="main-nav"
-                id="mainNav"
-                aria-label="Menu principal"
+                class="header-menu"
+                id="headerMenu"
             >
 
                 <a
                     href="index.html"
-                    class="nav-item active"
+                    class="menu-link active"
                 >
                     Início
                 </a>
 
                 <a
                     href="sobre.html"
-                    class="nav-item"
+                    class="menu-link"
                 >
                     Sobre
                 </a>
 
                 <a
                     href="cursos.html"
-                    class="nav-item"
+                    class="menu-link"
                 >
                     Cursos
                 </a>
 
                 <a
                     href="agenda.html"
-                    class="nav-item"
+                    class="menu-link"
                 >
                     Agenda
                 </a>
 
                 <a
                     href="contato.html"
-                    class="nav-item"
+                    class="menu-link"
                 >
                     Contato
                 </a>
 
                 <a
                     href="ofertas.html"
-                    class="nav-item"
+                    class="menu-link"
                 >
                     Dízimos e Ofertas
                 </a>
 
-
-                <!-- aparece somente no celular -->
-
                 <a
                     href="cursos.html"
-                    class="mobile-course-button"
+                    class="mobile-course"
                 >
                     Ver Cursos
                 </a>
@@ -112,23 +104,21 @@
             </nav>
 
 
-
-            <!-- BOTÃO DESKTOP -->
+            <!-- BOTÃO VER CURSOS -->
 
             <a
                 href="cursos.html"
-                class="course-button"
+                class="header-course-button"
             >
                 Ver Cursos
             </a>
 
 
-
-            <!-- BOTÃO MOBILE -->
+            <!-- MENU CELULAR -->
 
             <button
-                class="menu-button"
-                id="menuButton"
+                class="mobile-menu-button"
+                id="mobileMenuButton"
                 type="button"
                 aria-label="Abrir menu"
                 aria-expanded="false"
@@ -140,62 +130,56 @@
 
             </button>
 
-
         </div>
 
     </header>
 
 
 
-    <!-- =====================================================
+    <!-- ==========================================
          BANNER PRINCIPAL
-    ====================================================== -->
+    =========================================== -->
 
     <main>
 
-
         <section class="hero">
 
+            <div class="hero-decoration decoration-one"></div>
 
-            <!-- elementos decorativos -->
-
-            <div class="hero-light hero-light-1"></div>
-            <div class="hero-light hero-light-2"></div>
+            <div class="hero-decoration decoration-two"></div>
 
 
-            <div class="hero-inner">
+            <div class="hero-container">
 
 
-                <!-- CONTEÚDO ESQUERDO -->
+                <!-- TEXTO -->
 
-                <div class="hero-content">
+                <div class="hero-text">
 
-
-                    <p class="hero-eyebrow">
+                    <p class="hero-small-title">
                         APÓSTOLA PATRICIA SANTANA
                     </p>
 
 
                     <h1>
 
-                        <span class="title-white">
+                        <span>
                             Libertação,
                         </span>
 
-                        <span class="title-blue">
+                        <strong>
                             Cura e Restauração
-                        </span>
+                        </strong>
 
                     </h1>
 
 
-                    <p class="hero-subtitle">
+                    <p class="hero-ministry">
                         UM MINISTÉRIO PARA ESTA GERAÇÃO
                     </p>
 
 
-
-                    <div class="ornament">
+                    <div class="hero-divider">
 
                         <span></span>
 
@@ -206,28 +190,25 @@
                     </div>
 
 
-
-                    <blockquote class="hero-verse">
+                    <div class="hero-verse">
 
                         <p>
                             “O Espírito do Senhor está sobre mim,<br>
                             porque me ungiu para libertar os cativos...”
                         </p>
 
-                        <cite>
+                        <small>
                             Lucas 4:18
-                        </cite>
+                        </small>
 
-                    </blockquote>
+                    </div>
 
 
-
-                    <div class="hero-actions">
-
+                    <div class="hero-buttons">
 
                         <a
-                            href="#ministracoes"
-                            class="hero-button primary"
+                            href="#ministerio"
+                            class="button-main"
                         >
                             Assista às Ministrações
                         </a>
@@ -235,54 +216,49 @@
 
                         <a
                             href="cursos.html"
-                            class="hero-button secondary"
+                            class="button-outline"
                         >
                             Conheça os Cursos
 
-                            <span>
-                                ›
-                            </span>
+                            <span>›</span>
                         </a>
 
-
                     </div>
-
 
                 </div>
 
 
 
-                <!-- CONTEÚDO DIREITO -->
+                <!-- LADO DIREITO -->
 
-                <div class="hero-visual">
+                <div class="hero-right">
+
+                    <div class="hero-circle">
+
+                        <div class="circle-one"></div>
+
+                        <div class="circle-two"></div>
+
+                        <div class="circle-three"></div>
+
+                    </div>
 
 
-                    <div class="visual-glow"></div>
-
-
-                    <img
-                        src="./logo-rodape.png"
-                        alt=""
-                        class="hero-symbol"
-                    >
-
-
-                    <div class="hero-phrase">
+                    <div class="hero-message">
 
                         <span>
-                            Para
+                            Libertação
                         </span>
 
                         <strong>
-                            vidas
+                            Cura
                         </strong>
 
                         <span>
-                            reais
+                            Restauração
                         </span>
 
                     </div>
-
 
                 </div>
 
@@ -291,68 +267,56 @@
 
 
 
-            <!-- RODAPÉ DO BANNER -->
+            <div class="hero-bottom">
 
-            <div class="hero-topics">
-
-                <span>
-                    Ensino
-                </span>
+                <span>Ensino</span>
 
                 <i></i>
 
-                <span>
-                    Libertação
-                </span>
+                <span>Libertação</span>
 
                 <i></i>
 
-                <span>
-                    Cura
-                </span>
+                <span>Cura</span>
 
                 <i></i>
 
-                <span>
-                    Restauração
-                </span>
+                <span>Restauração</span>
 
             </div>
-
 
         </section>
 
 
 
-        <!-- =================================================
+        <!-- ==========================================
              SEGUNDA SEÇÃO
-        ================================================== -->
+        =========================================== -->
 
         <section
-            class="ministry"
-            id="ministracoes"
+            class="ministry-section"
+            id="ministerio"
         >
 
-            <div class="ministry-inner">
+            <div class="ministry-container">
 
-
-                <p class="section-label">
+                <p class="section-small">
                     MINISTÉRIO APOSTÓLICO
                 </p>
 
 
                 <h2>
-                    Um chamado para
-                    <span>libertar, curar e restaurar</span>
+                    Libertação, Cura
+                    <span>e Restauração</span>
                 </h2>
 
 
-                <div class="section-line"></div>
+                <div class="section-divider"></div>
 
 
-                <p class="section-description">
+                <p class="section-text">
 
-                    Um ministério fundamentado na Palavra de Deus,
+                    Um ministério comprometido com a Palavra de Deus,
                     levando ensino, libertação, cura e restauração
                     para vidas e famílias.
 
@@ -361,23 +325,19 @@
 
                 <a
                     href="sobre.html"
-                    class="about-button"
+                    class="section-button"
                 >
                     Conheça o Ministério
                 </a>
-
 
             </div>
 
         </section>
 
-
     </main>
 
 
-
-    <script src="./script.js?v=10"></script>
-
+    <script src="script.js?v=20"></script>
 
 </body>
 
