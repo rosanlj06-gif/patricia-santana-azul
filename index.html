@@ -3,81 +3,247 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Apóstola Patricia Santana</title>
+    <title>Ministério Apostólico Patricia Santana</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="cabecalho">
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
 
-    <div class="cabecalho-container">
+    <header class="cabecalho">
 
-        <!-- LOGO + NOME -->
-        <a href="index.html" class="marca">
+        <div class="cabecalho-container">
 
-            <img
-                src="logo-patricia.png"
-                alt="Patricia Santana"
-                class="marca-logo"
+            <!-- LOGO + NOME -->
+
+            <a href="index.html" class="marca">
+
+                <img
+                    src="logo-patricia.png"
+                    alt="Patricia Santana"
+                    class="marca-logo"
+                >
+
+                <div class="marca-texto">
+
+                    <span class="marca-nome">
+                        PATRICIA SANTANA
+                    </span>
+
+                    <span class="marca-ministerio">
+                        MINISTÉRIO APOSTÓLICO
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- MENU DESKTOP -->
+
+            <nav class="menu">
+
+                <a href="index.html" class="ativo">
+                    INÍCIO
+                </a>
+
+                <a href="sobre.html">
+                    SOBRE
+                </a>
+
+                <a href="cursos.html">
+                    CURSOS
+                </a>
+
+                <a href="agenda.html">
+                    AGENDA
+                </a>
+
+                <a href="contato.html">
+                    CONTATO
+                </a>
+
+                <a href="ofertas.html">
+                    DÍZIMOS E OFERTAS
+                </a>
+
+            </nav>
+
+
+            <!-- BOTÃO DESKTOP -->
+
+            <a href="cursos.html" class="botao-cursos">
+                VER CURSOS
+            </a>
+
+
+            <!-- BOTÃO HAMBÚRGUER - CELULAR -->
+
+            <button
+                class="botao-menu-mobile"
+                id="botaoMenuMobile"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="menuMobile"
             >
 
-            <div class="marca-texto">
+                <span></span>
+                <span></span>
+                <span></span>
 
-                <span class="marca-nome">
-                    PATRICIA SANTANA
-                </span>
+            </button>
 
-                <span class="marca-ministerio">
-                    MINISTÉRIO APOSTÓLICO
-                </span>
-
-            </div>
-
-        </a>
+        </div>
 
 
-        <!-- MENU -->
-        <nav class="menu">
+        <!-- =================================================
+             MENU MOBILE
+        ================================================== -->
 
-            <a href="index.html" class="ativo">
-                INÍCIO
-            </a>
+        <div class="menu-mobile" id="menuMobile">
 
-            <a href="sobre.html">
-                SOBRE
-            </a>
+            <nav class="menu-mobile-links">
 
-            <a href="cursos.html">
-                CURSOS
-            </a>
+                <a href="index.html" class="ativo">
+                    INÍCIO
+                </a>
 
-            <a href="agenda.html">
-                AGENDA
-            </a>
+                <a href="sobre.html">
+                    SOBRE
+                </a>
 
-            <a href="contato.html">
-                CONTATO
-            </a>
+                <a href="cursos.html">
+                    CURSOS
+                </a>
 
-            <a href="ofertas.html">
-                DÍZIMOS E OFERTAS
-            </a>
+                <a href="agenda.html">
+                    AGENDA
+                </a>
 
-        </nav>
+                <a href="contato.html">
+                    CONTATO
+                </a>
+
+                <a href="ofertas.html">
+                    DÍZIMOS E OFERTAS
+                </a>
+
+                <a href="cursos.html" class="menu-mobile-cursos">
+                    VER CURSOS
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
 
 
-        <!-- BOTÃO -->
-        <a href="cursos.html" class="botao-cursos">
-            VER CURSOS
-        </a>
+    <!-- =====================================================
+         O CONTEÚDO DA SUA HOME CONTINUA AQUI
+    ====================================================== -->
 
-    </div>
 
-</header>
+
+    <!-- =====================================================
+         JAVASCRIPT DO MENU MOBILE
+    ====================================================== -->
+
+    <script>
+
+        const botaoMenuMobile =
+            document.getElementById("botaoMenuMobile");
+
+        const menuMobile =
+            document.getElementById("menuMobile");
+
+
+        botaoMenuMobile.addEventListener("click", function () {
+
+            const menuAberto =
+                menuMobile.classList.toggle("aberto");
+
+
+            botaoMenuMobile.classList.toggle(
+                "aberto",
+                menuAberto
+            );
+
+
+            botaoMenuMobile.setAttribute(
+                "aria-expanded",
+                menuAberto
+            );
+
+
+            botaoMenuMobile.setAttribute(
+                "aria-label",
+                menuAberto
+                    ? "Fechar menu"
+                    : "Abrir menu"
+            );
+
+        });
+
+
+        /* FECHA AO CLICAR EM UM LINK */
+
+        const linksMobile =
+            menuMobile.querySelectorAll("a");
+
+
+        linksMobile.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                menuMobile.classList.remove("aberto");
+
+                botaoMenuMobile.classList.remove("aberto");
+
+                botaoMenuMobile.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                botaoMenuMobile.setAttribute(
+                    "aria-label",
+                    "Abrir menu"
+                );
+
+            });
+
+        });
+
+
+        /* FECHA O MENU SE VOLTAR PARA O DESKTOP */
+
+        window.addEventListener("resize", function () {
+
+            if (window.innerWidth > 820) {
+
+                menuMobile.classList.remove("aberto");
+
+                botaoMenuMobile.classList.remove("aberto");
+
+                botaoMenuMobile.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+    </script>
 
 </body>
+
 </html>
