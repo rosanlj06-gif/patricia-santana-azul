@@ -18,44 +18,25 @@
 
 <body>
 
-    <!-- =========================
-         CABEÇALHO
-    ========================== -->
-
+    <!-- CABEÇALHO -->
     <header class="header">
 
         <div class="header-container">
 
             <!-- LOGO -->
-
-            <a href="index.html" class="logo">
-
+            <a
+                href="index.html"
+                class="logo"
+                aria-label="Página inicial"
+            >
                 <img
                     src="logo-patricia.png"
                     alt="Patricia Santana - Ministério Apostólico"
                 >
-
             </a>
 
 
-            <!-- BOTÃO MENU CELULAR -->
-
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Abrir menu"
-                aria-expanded="false"
-            >
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </button>
-
-
-            <!-- MENU -->
-
+            <!-- MENU DESKTOP -->
             <nav class="navigation" id="navigation">
 
                 <a href="index.html" class="nav-link active">
@@ -82,193 +63,76 @@
                     Dízimos e Ofertas
                 </a>
 
+                <a href="cursos.html" class="btn-cursos-mobile">
+                    Ver Cursos
+                </a>
+
             </nav>
 
 
-            <!-- BOTÃO -->
-
+            <!-- BOTÃO CURSOS DESKTOP -->
             <a href="cursos.html" class="btn-cursos">
                 Ver Cursos
             </a>
+
+
+            <!-- MENU CELULAR -->
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
         </div>
 
     </header>
 
 
-
-    <!-- =========================
-         HERO
-    ========================== -->
-
+    <!-- ÁREA TEMPORÁRIA -->
     <main>
 
-        <section class="hero">
+        <section class="inicio">
 
-            <div class="hero-glow hero-glow-one"></div>
+            <div class="inicio-container">
 
-            <div class="hero-glow hero-glow-two"></div>
-
-
-            <div class="hero-container">
-
-
-                <!-- TEXTO -->
-
-                <div class="hero-content">
-
-                    <p class="hero-name">
-                        APÓSTOLA PATRICIA SANTANA
-                    </p>
-
-
-                    <h1>
-
-                        <span>
-                            Libertação,
-                        </span>
-
-                        <strong>
-                            Cura e Restauração
-                        </strong>
-
-                    </h1>
-
-
-                    <p class="hero-subtitle">
-                        UM MINISTÉRIO PARA ESTA GERAÇÃO
-                    </p>
-
-
-                    <div class="divider">
-
-                        <span></span>
-
-                        <i></i>
-
-                        <span></span>
-
-                    </div>
-
-
-                    <blockquote>
-
-                        “O Espírito do Senhor está sobre mim,
-                        porque me ungiu para libertar os cativos...”
-
-                        <cite>
-                            Lucas 4:18
-                        </cite>
-
-                    </blockquote>
-
-
-                    <div class="hero-buttons">
-
-                        <a
-                            href="#ministracoes"
-                            class="btn btn-primary"
-                        >
-                            Assista às Ministrações
-                        </a>
-
-
-                        <a
-                            href="cursos.html"
-                            class="btn btn-outline"
-                        >
-                            Conheça os Cursos
-
-                            <span>›</span>
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- ARTE -->
-
-                <div class="hero-art">
-
-                    <div class="symbol">
-
-                        <img
-                            src="img/logo-patricia.png"
-                            alt=""
-                        >
-
-                    </div>
-
-
-                    <div class="phrase">
-
-                        <span>Para</span>
-
-                        <strong>vidas</strong>
-
-                        <span>reais</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="hero-categories">
-
-                <span>Ensino</span>
-
-                <i></i>
-
-                <span>Libertação</span>
-
-                <i></i>
-
-                <span>Cura</span>
-
-                <i></i>
-
-                <span>Restauração</span>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             APRESENTAÇÃO
-        ========================== -->
-
-        <section class="presentation" id="ministracoes">
-
-            <div class="presentation-container">
-
-                <p class="section-label">
-                    MINISTÉRIO APOSTÓLICO
+                <p class="inicio-mini">
+                    APÓSTOLA PATRICIA SANTANA
                 </p>
 
-                <h2>
-                    Libertação, Cura e Restauração
-                </h2>
+                <h1>
+                    Libertação,
+                    <span>Cura e Restauração</span>
+                </h1>
 
-                <div class="small-divider"></div>
-
-                <p class="presentation-text">
-
-                    Um ministério comprometido com a Palavra de Deus,
-                    levando ensino, libertação, cura e restauração
-                    para vidas e famílias.
-
+                <p class="inicio-subtitulo">
+                    Um ministério para esta geração
                 </p>
 
+                <div class="linha"></div>
 
-                <a href="sobre.html" class="section-button">
-                    Conheça o Ministério
-                </a>
+                <blockquote>
+                    “O Espírito do Senhor está sobre mim,
+                    porque me ungiu para libertar os cativos...”
+
+                    <strong>Lucas 4:18</strong>
+                </blockquote>
+
+                <div class="inicio-botoes">
+
+                    <a href="#" class="botao-principal">
+                        Assista às Ministrações
+                    </a>
+
+                    <a href="cursos.html" class="botao-secundario">
+                        Conheça os Cursos
+                    </a>
+
+                </div>
 
             </div>
 
