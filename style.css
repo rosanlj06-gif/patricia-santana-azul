@@ -31,30 +31,41 @@ a {
     width: 100%;
     height: 76px;
 
-    background: #ffffff;
+    background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #ffffff 72%,
+        #f4f9fd 100%
+    );
 
     border-bottom: 1px solid #dce7ef;
 }
 
 
 /* =====================================================
-   CONTAINER DO CABEÇALHO
+   CONTAINER
 ===================================================== */
 
 .cabecalho-container {
     width: 100%;
-    max-width: 1220px;
     height: 76px;
 
-    margin: 0 auto;
+    padding: 0 24px;
 
-    padding: 0 20px;
+    display: grid;
 
-    display: flex;
+    /*
+       MESMA LÓGICA VISUAL DA REFERÊNCIA:
+
+       MARCA | MENU | BOTÃO
+    */
+
+    grid-template-columns:
+        360px
+        1fr
+        130px;
+
     align-items: center;
-
-    /* igual à distribuição do modelo preto */
-    gap: 0;
 }
 
 
@@ -66,34 +77,33 @@ a {
     display: flex;
     align-items: center;
 
-    flex: 0 0 auto;
+    justify-self: start;
 }
 
 
 /* LOGO */
 
 .marca-logo {
+    width: 70px !important;
+    height: 64px !important;
+
+    max-width: 70px !important;
+    max-height: 64px !important;
+
     display: block;
-
-    width: 67px !important;
-    height: 62px !important;
-
-    max-width: 67px !important;
-    max-height: 62px !important;
 
     object-fit: contain;
 }
 
 
-/* =====================================================
-   TEXTO DA MARCA
-===================================================== */
+/* TEXTO DA MARCA */
 
 .marca-texto {
-    margin-left: 10px;
+    margin-left: 11px;
 
     display: flex;
     flex-direction: column;
+
     justify-content: center;
 }
 
@@ -101,16 +111,16 @@ a {
 /* PATRICIA SANTANA */
 
 .marca-nome {
-    color: #073b70;
-
     font-family: Georgia, "Times New Roman", serif;
 
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 600;
 
     line-height: 1;
 
     letter-spacing: 0.3px;
+
+    color: #073b70;
 
     white-space: nowrap;
 }
@@ -119,16 +129,16 @@ a {
 /* MINISTÉRIO APOSTÓLICO */
 
 .marca-ministerio {
-    margin-top: 11px;
-
-    color: #087bc9;
+    margin-top: 7px;
 
     font-size: 6px;
     font-weight: 600;
 
     line-height: 1;
 
-    letter-spacing: 2.7px;
+    letter-spacing: 2.8px;
+
+    color: #087bc9;
 
     white-space: nowrap;
 }
@@ -139,33 +149,29 @@ a {
 ===================================================== */
 
 .menu {
-    margin-left: 105px;
-
     display: flex;
     align-items: center;
 
-    gap: 25px;
+    justify-content: center;
 
-    flex: 0 0 auto;
+    gap: 28px;
+
+    height: 76px;
 }
 
 
-/* LINKS */
-
 .menu a {
-    height: 76px;
-
     position: relative;
+
+    height: 76px;
 
     display: flex;
     align-items: center;
 
-    color: #0b2f50;
+    font-size: 9px;
+    font-weight: 500;
 
-    font-size: 11px;
-    font-weight: 600;
-
-    line-height: 1;
+    color: #0a3155;
 
     white-space: nowrap;
 
@@ -173,21 +179,13 @@ a {
 }
 
 
-/* HOVER */
-
-.menu a:hover {
-    color: #087dcc;
-}
-
-
-/* ATIVO */
-
+.menu a:hover,
 .menu a.ativo {
     color: #087dcc;
 }
 
 
-/* LINHA ABAIXO DO INÍCIO */
+/* LINHA DO INÍCIO */
 
 .menu a.ativo::after {
     content: "";
@@ -210,22 +208,14 @@ a {
 ===================================================== */
 
 .botao-cursos {
-    width: 108px;
+    width: 110px;
     height: 42px;
 
-    /*
-       IMPORTANTE:
-       sem margin-left:auto.
-       O botão fica perto do menu, como no modelo preto.
-    */
-
-    margin-left: 105px;
+    justify-self: end;
 
     display: flex;
     align-items: center;
     justify-content: center;
-
-    flex: 0 0 auto;
 
     background: #0876bd;
 
@@ -236,22 +226,14 @@ a {
     font-size: 8px;
     font-weight: 700;
 
-    line-height: 1;
-
     white-space: nowrap;
 
     box-shadow: 0 6px 15px rgba(7, 88, 148, 0.15);
-
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
 }
 
 
 .botao-cursos:hover {
     background: #0667a7;
-
-    transform: translateY(-1px);
 }
 
 
@@ -259,65 +241,20 @@ a {
    NOTEBOOK
 ===================================================== */
 
-@media (max-width: 1250px) {
+@media (max-width: 1200px) {
 
     .cabecalho-container {
-        max-width: 1100px;
+        grid-template-columns:
+            310px
+            1fr
+            110px;
 
-        padding-left: 15px;
-        padding-right: 15px;
+        padding: 0 18px;
     }
 
 
     .menu {
-        margin-left: 60px;
-
-        gap: 19px;
-    }
-
-
-    .botao-cursos {
-        margin-left: 60px;
-    }
-}
-
-
-/* =====================================================
-   TELAS MENORES
-===================================================== */
-
-@media (max-width: 1050px) {
-
-    .marca-logo {
-        width: 60px !important;
-        height: 56px !important;
-
-        max-width: 60px !important;
-        max-height: 56px !important;
-    }
-
-
-    .marca-texto {
-        margin-left: 8px;
-    }
-
-
-    .marca-nome {
-        font-size: 16px;
-    }
-
-
-    .marca-ministerio {
-        font-size: 5px;
-
-        letter-spacing: 2px;
-    }
-
-
-    .menu {
-        margin-left: 35px;
-
-        gap: 15px;
+        gap: 18px;
     }
 
 
@@ -326,19 +263,36 @@ a {
     }
 
 
+    .marca-logo {
+        width: 62px !important;
+        height: 58px !important;
+
+        max-width: 62px !important;
+        max-height: 58px !important;
+    }
+
+
+    .marca-nome {
+        font-size: 17px;
+    }
+
+
+    .marca-ministerio {
+        font-size: 5px;
+
+        letter-spacing: 2.2px;
+    }
+
+
     .botao-cursos {
-        width: 95px;
-        height: 39px;
-
-        margin-left: 35px;
-
-        font-size: 7px;
+        width: 100px;
+        height: 40px;
     }
 }
 
 
 /* =====================================================
-   CELULAR / TABLET
+   CELULAR
 ===================================================== */
 
 @media (max-width: 820px) {
@@ -352,7 +306,7 @@ a {
         width: 92%;
         height: auto;
 
-        min-height: 72px;
+        margin: 0 auto;
 
         padding: 7px 0 11px;
 
@@ -363,7 +317,10 @@ a {
     }
 
 
-    /* MARCA */
+    .marca {
+        flex: 0 0 auto;
+    }
+
 
     .marca-logo {
         width: 53px !important;
@@ -393,10 +350,8 @@ a {
     }
 
 
-    /* BOTÃO */
-
     .botao-cursos {
-        width: 85px;
+        width: 84px;
         height: 36px;
 
         margin-left: auto;
@@ -405,17 +360,14 @@ a {
     }
 
 
-    /* MENU */
-
     .menu {
         width: 100%;
+        height: auto;
 
         order: 3;
 
-        margin-left: 0;
         margin-top: 8px;
 
-        display: flex;
         justify-content: center;
         flex-wrap: wrap;
 
@@ -432,56 +384,5 @@ a {
 
     .menu a.ativo::after {
         bottom: 0;
-    }
-}
-
-
-/* =====================================================
-   CELULAR PEQUENO
-===================================================== */
-
-@media (max-width: 480px) {
-
-    .cabecalho-container {
-        width: 94%;
-    }
-
-
-    .marca-logo {
-        width: 47px !important;
-        height: 45px !important;
-
-        max-width: 47px !important;
-        max-height: 45px !important;
-    }
-
-
-    .marca-nome {
-        font-size: 12px;
-    }
-
-
-    .marca-ministerio {
-        font-size: 4px;
-
-        letter-spacing: 1.1px;
-    }
-
-
-    .botao-cursos {
-        width: 77px;
-        height: 34px;
-
-        font-size: 6.5px;
-    }
-
-
-    .menu {
-        gap: 4px 11px;
-    }
-
-
-    .menu a {
-        font-size: 7px;
     }
 }
