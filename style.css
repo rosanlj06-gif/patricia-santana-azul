@@ -1,6 +1,6 @@
-/* ==========================================================
-   RESET GERAL
-========================================================== */
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
     margin: 0;
@@ -13,59 +13,75 @@ html {
 }
 
 body {
-    margin: 0;
-    padding: 0;
     width: 100%;
     min-height: 100vh;
 
     font-family: Arial, Helvetica, sans-serif;
 
+    color: #0a3158;
     background: #ffffff;
-    color: #082f5b;
 
     overflow-x: hidden;
 }
 
 a {
+    color: inherit;
     text-decoration: none;
 }
 
 img {
     display: block;
+    max-width: 100%;
+}
+
+button {
+    font-family: inherit;
 }
 
 
+/* =========================================================
+   CORES
+========================================================= */
 
-/* ==========================================================
+:root {
+    --azul-escuro: #021d39;
+    --azul-profundo: #032b55;
+    --azul: #075fa9;
+    --azul-vivo: #0784d9;
+    --azul-claro: #64bdf4;
+    --azul-suave: #eef7fd;
+    --branco: #ffffff;
+    --texto: #0a3158;
+    --cinza: #64788b;
+}
+
+
+/* =========================================================
    CABEÇALHO
-========================================================== */
+========================================================= */
 
 .topo {
     width: 100%;
-    height: 90px;
+    height: 88px;
 
     position: relative;
     z-index: 1000;
 
-    background: linear-gradient(
-        110deg,
-        #ffffff 0%,
-        #ffffff 70%,
-        #f2f8fd 100%
-    );
+    background:
+        linear-gradient(
+            110deg,
+            #ffffff 0%,
+            #ffffff 72%,
+            #f2f8fd 100%
+        );
 
-    border-bottom: 1px solid #dce7f0;
-
-    box-shadow:
-        0 4px 15px
-        rgba(5, 50, 90, 0.04);
+    border-bottom: 1px solid #dce8f1;
 }
 
-
 .topo-container {
-    width: 94%;
-    max-width: 1450px;
-    height: 90px;
+    width: 92%;
+    max-width: 1500px;
+    height: 88px;
 
     margin: 0 auto;
 
@@ -74,42 +90,63 @@ img {
 }
 
 
-
-/* ==========================================================
+/* =========================================================
    LOGO
-========================================================== */
+========================================================= */
 
 .logo {
-    width: 330px;
-    height: 75px;
-
-    flex: 0 0 330px;
+    flex: 0 0 auto;
 
     display: flex;
     align-items: center;
 
-    overflow: hidden;
+    gap: 13px;
 }
-
 
 .logo img {
-    display: block;
+    width: 70px !important;
+    height: 70px !important;
 
-    width: 330px !important;
-    max-width: 330px !important;
+    max-width: 70px !important;
+    max-height: 70px !important;
 
-    height: 75px !important;
-    max-height: 75px !important;
+    object-fit: contain;
+}
 
-    object-fit: contain !important;
-    object-position: left center !important;
+.logo-texto {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-texto strong {
+    color: #073b70;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+}
+
+.logo-texto span {
+    margin-top: 5px;
+
+    color: #087bd1;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 3.5px;
 }
 
 
-
-/* ==========================================================
+/* =========================================================
    MENU
-========================================================== */
+========================================================= */
 
 .menu {
     margin-left: auto;
@@ -117,76 +154,59 @@ img {
     display: flex;
     align-items: center;
 
-    gap: 21px;
+    gap: 22px;
 }
 
-
 .menu > a:not(.botao-cursos-mobile) {
-    height: 90px;
+    height: 88px;
 
     position: relative;
 
     display: flex;
     align-items: center;
 
-    color: #082f59;
+    color: #092f55;
 
     font-size: 11px;
     font-weight: 500;
 
-    letter-spacing: 0.1px;
-
     text-transform: uppercase;
 
     white-space: nowrap;
-
-    transition: color 0.2s ease;
 }
 
-
-.menu > a:not(.botao-cursos-mobile):hover {
-    color: #0879d4;
-}
-
-
+.menu > a:not(.botao-cursos-mobile):hover,
 .menu > a.ativo {
-    color: #0879d4;
-
-    font-weight: 600;
+    color: #0781d5;
 }
-
 
 .menu > a:not(.botao-cursos-mobile)::after {
     content: "";
 
-    position: absolute;
-
-    left: 50%;
-    bottom: 24px;
-
     width: 0;
     height: 2px;
 
-    border-radius: 20px;
+    position: absolute;
 
-    background: #087bd8;
+    left: 50%;
+    bottom: 23px;
 
     transform: translateX(-50%);
+
+    background: #0781d5;
 
     transition: width 0.2s ease;
 }
 
-
-.menu > a.ativo::after,
-.menu > a:not(.botao-cursos-mobile):hover::after {
+.menu > a:hover::after,
+.menu > a.ativo::after {
     width: 100%;
 }
 
 
-
-/* ==========================================================
-   BOTÃO VER CURSOS
-========================================================== */
+/* =========================================================
+   BOTÃO CABEÇALHO
+========================================================= */
 
 .botao-cursos {
     width: 110px;
@@ -194,67 +214,49 @@ img {
 
     margin-left: 27px;
 
-    flex: 0 0 110px;
-
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border-radius: 5px;
-
-    background: linear-gradient(
-        135deg,
-        #07529f,
-        #087bc9
-    );
+    flex: 0 0 110px;
 
     color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #07569e,
+            #0780cf
+        );
+
+    border-radius: 5px;
 
     font-size: 10px;
     font-weight: 600;
 
-    letter-spacing: 0.2px;
-
     text-transform: uppercase;
 
     box-shadow:
-        0 7px 17px
-        rgba(4, 88, 168, 0.17);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        0 7px 18px
+        rgba(3, 82, 155, 0.16);
 }
-
-
-.botao-cursos:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 9px 22px
-        rgba(4, 88, 168, 0.25);
-}
-
 
 .botao-cursos-mobile {
     display: none;
 }
 
 
-
-/* ==========================================================
+/* =========================================================
    HAMBÚRGUER
-========================================================== */
+========================================================= */
 
 .hamburguer {
     width: 42px;
     height: 42px;
 
-    margin-left: 15px;
-
-    padding: 0;
-
     display: none;
+
+    margin-left: 15px;
 
     border: 0;
 
@@ -269,30 +271,26 @@ img {
     gap: 5px;
 }
 
-
 .hamburguer span {
     width: 25px;
     height: 2px;
 
     display: block;
 
-    border-radius: 10px;
-
     background: #073663;
 
-    transition: 0.25s ease;
+    border-radius: 20px;
 }
 
 
+/* =========================================================
+   HERO
+========================================================= */
 
-/* ==========================================================
-   BANNER PRINCIPAL
-========================================================== */
-
-.banner {
+.hero {
     width: 100%;
 
-    min-height: calc(100vh - 90px);
+    min-height: calc(100vh - 88px);
 
     position: relative;
 
@@ -301,54 +299,45 @@ img {
     display: flex;
     align-items: center;
 
+    color: #ffffff;
+
     background:
-
         radial-gradient(
-            circle at 74% 28%,
-            rgba(47, 158, 239, 0.42),
-            transparent 31%
+            circle at 74% 38%,
+            rgba(28, 151, 236, 0.30),
+            transparent 30%
         ),
-
-        radial-gradient(
-            circle at 61% 87%,
-            rgba(0, 121, 220, 0.23),
-            transparent 38%
-        ),
-
         linear-gradient(
             110deg,
-            #02172f 0%,
-            #022a55 43%,
-            #064f8e 72%,
-            #0c6daf 100%
+            #011a34 0%,
+            #032c57 43%,
+            #07538f 73%,
+            #0c76ba 100%
         );
-
-    color: #ffffff;
 }
 
-
-.banner::before {
+.hero::after {
     content: "";
 
+    width: 800px;
+    height: 800px;
+
     position: absolute;
-    inset: 0;
 
-    background: linear-gradient(
-        125deg,
-        rgba(255, 255, 255, 0.025),
-        transparent 45%
-    );
+    top: -470px;
+    right: -260px;
 
-    pointer-events: none;
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.13),
+            transparent 68%
+        );
 }
 
-
-
-/* ==========================================================
-   LUZES
-========================================================== */
-
-.luz {
+.hero-luz {
     position: absolute;
 
     border-radius: 50%;
@@ -356,136 +345,118 @@ img {
     pointer-events: none;
 }
 
+.hero-luz-1 {
+    width: 600px;
+    height: 600px;
 
-.luz-1 {
-    width: 750px;
-    height: 750px;
+    left: 30%;
+    bottom: -500px;
 
-    top: -480px;
-    right: -180px;
+    background:
+        radial-gradient(
+            circle,
+            rgba(20,144,231,0.30),
+            transparent 70%
+        );
+}
 
-    background: radial-gradient(
-        circle,
-        rgba(255, 255, 255, 0.20),
-        transparent 68%
-    );
+.hero-luz-2 {
+    width: 400px;
+    height: 400px;
+
+    right: 8%;
+    top: 18%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(85,190,255,0.12),
+            transparent 70%
+        );
 }
 
 
-.luz-2 {
-    width: 650px;
-    height: 650px;
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
 
-    left: 38%;
-    bottom: -510px;
-
-    background: radial-gradient(
-        circle,
-        rgba(0, 144, 255, 0.30),
-        transparent 68%
-    );
-}
-
-
-
-/* ==========================================================
-   CONTAINER DO BANNER
-========================================================== */
-
-.banner-container {
-    width: 90%;
-    max-width: 1400px;
+.hero-container {
+    width: 86%;
+    max-width: 1450px;
 
     margin: 0 auto;
 
-    padding: 80px 0 115px;
+    padding: 75px 0 115px;
 
     position: relative;
-    z-index: 3;
+    z-index: 5;
 
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.08fr)
-        minmax(360px, 0.92fr);
+        minmax(0, 1.05fr)
+        minmax(380px, 0.95fr);
 
     align-items: center;
 
-    gap: 70px;
+    gap: 80px;
 }
 
 
+/* =========================================================
+   HERO TEXTO
+========================================================= */
 
-/* ==========================================================
-   CONTEÚDO DO BANNER
-========================================================== */
-
-.banner-conteudo {
-    max-width: 790px;
+.hero-conteudo {
+    max-width: 770px;
 }
 
-
-.chamada {
-    margin-bottom: 19px;
+.hero-superior {
+    margin-bottom: 22px;
 
     font-family:
         Georgia,
         "Times New Roman",
         serif;
 
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 15px;
 
-    letter-spacing: 7px;
+    letter-spacing: 8px;
 
-    color: rgba(255, 255, 255, 0.83);
+    color: rgba(255,255,255,0.85);
 }
 
-
-
-/* ==========================================================
-   TÍTULO
-========================================================== */
-
-.banner h1 {
-    margin: 0;
-
+.hero h1 {
     font-family:
         Georgia,
         "Times New Roman",
         serif;
 
-    color: #ffffff;
-
-    font-size: clamp(52px, 5.3vw, 86px);
+    font-size:
+        clamp(
+            55px,
+            5.4vw,
+            86px
+        );
 
     font-weight: 400;
 
-    line-height: 0.98;
+    line-height: 0.96;
 
     text-transform: uppercase;
 }
 
-
-.banner h1 span {
+.hero h1 span {
     display: block;
 
-    margin-top: 8px;
+    margin-top: 10px;
 
-    color: #6bc0ff;
+    color: #6bc4ff;
 
-    font-size: 0.80em;
-
-    font-weight: 400;
+    font-size: 0.76em;
 }
 
-
-
-/* ==========================================================
-   SUBTÍTULO
-========================================================== */
-
-.subtitulo {
+.hero-subtitulo {
     margin-top: 29px;
 
     font-family:
@@ -493,10 +464,7 @@ img {
         "Times New Roman",
         serif;
 
-    color: #ffffff;
-
-    font-size: 15px;
-    font-weight: 400;
+    font-size: 14px;
 
     letter-spacing: 7px;
 
@@ -504,16 +472,15 @@ img {
 }
 
 
+/* =========================================================
+   HERO DIVISOR
+========================================================= */
 
-/* ==========================================================
-   DIVISOR
-========================================================== */
-
-.divisor {
+.hero-divisor {
     width: 555px;
     max-width: 100%;
 
-    margin: 25px 0;
+    margin: 27px 0;
 
     display: flex;
     align-items: center;
@@ -521,17 +488,16 @@ img {
     gap: 14px;
 }
 
-
-.divisor span {
-    flex: 1;
-
+.hero-divisor span {
     height: 1px;
 
-    background: rgba(255, 255, 255, 0.55);
+    flex: 1;
+
+    background:
+        rgba(255,255,255,0.45);
 }
 
-
-.divisor i {
+.hero-divisor i {
     width: 14px;
     height: 14px;
 
@@ -541,26 +507,26 @@ img {
 
     border:
         1px solid
-        rgba(255, 255, 255, 0.80);
+        rgba(255,255,255,0.8);
 
-    background: linear-gradient(
-        135deg,
-        #64c8ff,
-        #087bd8
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #65c9ff,
+            #087bd8
+        );
 
     box-shadow:
-        0 0 14px
-        rgba(45, 168, 255, 0.60);
+        0 0 15px
+        rgba(63,178,255,0.5);
 }
 
 
-
-/* ==========================================================
+/* =========================================================
    VERSÍCULO
-========================================================== */
+========================================================= */
 
-.versiculo {
+.hero-versiculo {
     width: 590px;
     max-width: 100%;
 
@@ -572,11 +538,392 @@ img {
         serif;
 }
 
+.hero-versiculo p {
+    color:
+        rgba(255,255,255,0.93);
 
-.versiculo p {
-    color: rgba(255, 255, 255, 0.94);
+    font-size: 19px;
 
-    font-size: 20px;
+    font-style: italic;
+
+    line-height: 1.55;
+}
+
+.hero-versiculo strong {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 400;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   HERO BOTÕES
+========================================================= */
+
+.hero-botoes {
+    margin-top: 34px;
+
+    display: flex;
+
+    gap: 16px;
+
+    flex-wrap: wrap;
+}
+
+.btn-azul,
+.btn-transparente {
+    min-height: 53px;
+
+    padding: 0 27px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    transition: 0.2s ease;
+}
+
+.btn-azul {
+    background:
+        linear-gradient(
+            135deg,
+            #0788e1,
+            #075ba9
+        );
+
+    border: 1px solid #45b6ff;
+}
+
+.btn-transparente {
+    gap: 25px;
+
+    border:
+        1px solid
+        rgba(165,218,255,0.8);
+
+    background:
+        rgba(0,22,47,0.28);
+}
+
+.btn-azul:hover,
+.btn-transparente:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual {
+    min-height: 510px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.simbolo-fundo {
+    width: 440px;
+    height: 440px;
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(155,218,255,0.18);
+
+    box-shadow:
+        inset 0 0 100px
+        rgba(80,180,250,0.06);
+}
+
+.simbolo-fundo::before,
+.simbolo-fundo::after {
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(155,218,255,0.14);
+}
+
+.simbolo-fundo::before {
+    inset: 55px;
+}
+
+.simbolo-fundo::after {
+    inset: 110px;
+}
+
+.hero-mensagem {
+    position: relative;
+    z-index: 3;
+
+    text-align: center;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+.hero-mensagem span {
+    display: block;
+
+    color:
+        rgba(255,255,255,0.90);
+
+    font-size: 26px;
+
+    font-style: italic;
+}
+
+.hero-mensagem .pequena {
+    margin-bottom: 5px;
+
+    color:
+        rgba(255,255,255,0.65);
+
+    font-size: 16px;
+
+    letter-spacing: 2px;
+}
+
+.hero-mensagem strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #71c6ff;
+
+    font-size: 52px;
+
+    font-weight: 400;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   PALAVRAS HERO
+========================================================= */
+
+.hero-palavras {
+    position: absolute;
+
+    right: 5%;
+    bottom: 27px;
+
+    z-index: 6;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color:
+        rgba(255,255,255,0.75);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+.hero-palavras i {
+    width: 1px;
+    height: 11px;
+
+    background:
+        rgba(255,255,255,0.4);
+}
+
+
+/* =========================================================
+   MINISTÉRIO
+========================================================= */
+
+.ministerio {
+    padding: 110px 20px;
+
+    background: #ffffff;
+}
+
+.ministerio-container {
+    width: 88%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+}
+
+.ministerio-titulo {
+    margin-bottom: 60px;
+
+    text-align: center;
+}
+
+.ministerio-titulo > p,
+.mini-titulo {
+    margin-bottom: 15px;
+
+    color: #0780d1;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+.ministerio-titulo h2,
+.secao-cabecalho h2,
+.agenda-texto h2 {
+    color: #07345f;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            37px,
+            4vw,
+            53px
+        );
+
+    font-weight: 400;
+
+    line-height: 1.12;
+}
+
+.ministerio-titulo h2 span,
+.secao-cabecalho h2 span,
+.agenda-texto h2 span {
+    display: block;
+
+    color: #0877c7;
+}
+
+.linha {
+    width: 48px;
+    height: 2px;
+
+    margin: 23px auto 0;
+
+    background: #0783d5;
+}
+
+.ministerio-conteudo {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        0.85fr;
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+.ministerio-texto p {
+    margin-bottom: 18px;
+
+    color: #65798c;
+
+    font-size: 16px;
+
+    line-height: 1.85;
+}
+
+.link-seta {
+    margin-top: 10px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 20px;
+
+    color: #0878ca;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.ministerio-destaque {
+    padding: 55px;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f3f9fd,
+            #e9f5fc
+        );
+
+    border-left: 3px solid #0785d9;
+}
+
+.ministerio-destaque .aspas {
+    position: absolute;
+
+    top: 18px;
+    left: 30px;
+
+    color:
+        rgba(8,124,206,0.18);
+
+    font-family: Georgia, serif;
+
+    font-size: 90px;
+}
+
+.ministerio-destaque p {
+    position: relative;
+
+    color: #164b77;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 25px;
 
     font-style: italic;
 
@@ -584,368 +931,568 @@ img {
 }
 
 
-.versiculo strong {
-    display: block;
+/* =========================================================
+   PILARES
+========================================================= */
 
-    margin-top: 5px;
+.pilares {
+    padding: 110px 20px;
 
-    color: #ffffff;
-
-    font-size: 17px;
-    font-weight: 400;
-
-    font-style: italic;
+    background: #f4f9fd;
 }
 
-
-
-/* ==========================================================
-   BOTÕES DO BANNER
-========================================================== */
-
-.botoes-banner {
-    margin-top: 34px;
-
-    display: flex;
-
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 17px;
-}
-
-
-.btn-principal,
-.btn-secundario {
-    min-height: 54px;
-
-    padding: 0 27px;
-
-    display: inline-flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 6px;
-
-    color: #ffffff;
-
-    font-size: 11px;
-    font-weight: 600;
-
-    letter-spacing: 0.2px;
-
-    text-transform: uppercase;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-.btn-principal:hover,
-.btn-secundario:hover {
-    transform: translateY(-2px);
-}
-
-
-.btn-principal {
-    background: linear-gradient(
-        135deg,
-        #0986e5,
-        #075cae
-    );
-
-    border: 1px solid #45b4ff;
-
-    box-shadow:
-        0 9px 23px
-        rgba(0, 87, 170, 0.22);
-}
-
-
-.btn-secundario {
-    gap: 20px;
-
-    background:
-        rgba(2, 30, 62, 0.35);
-
-    border: 1px solid #93d2fa;
-}
-
-
-.btn-secundario span {
-    font-size: 23px;
-    font-weight: 300;
-}
-
-
-
-/* ==========================================================
-   VISUAL DIREITO
-========================================================== */
-
-.banner-visual {
-    min-height: 480px;
-
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-}
-
-
-.circulo {
-    position: absolute;
-
-    border-radius: 50%;
-}
-
-
-.circulo-1 {
-    width: 430px;
-    height: 430px;
-
-    border:
-        1px solid
-        rgba(158, 219, 255, 0.30);
-}
-
-
-.circulo-2 {
-    width: 330px;
-    height: 330px;
-
-    border:
-        1px solid
-        rgba(158, 219, 255, 0.20);
-}
-
-
-.circulo-3 {
-    width: 230px;
-    height: 230px;
-
-    border:
-        1px solid
-        rgba(158, 219, 255, 0.17);
-
-    background: radial-gradient(
-        circle,
-        rgba(105, 193, 255, 0.20),
-        transparent 68%
-    );
-}
-
-
-
-/* ==========================================================
-   MENSAGEM DIREITA
-========================================================== */
-
-.mensagem-banner {
-    position: relative;
-    z-index: 3;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    color: rgba(255, 255, 255, 0.94);
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 34px;
-
-    font-style: italic;
-
-    line-height: 1.1;
-
-    text-shadow:
-        0 3px 14px
-        rgba(0, 0, 0, 0.18);
-}
-
-
-.mensagem-banner strong {
-    color: #75c7ff;
-
-    font-size: 46px;
-
-    font-weight: 400;
-}
-
-
-
-/* ==========================================================
-   PALAVRAS INFERIORES
-========================================================== */
-
-.banner-palavras {
-    position: absolute;
-
-    right: 5%;
-    bottom: 28px;
-
-    z-index: 5;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 16px;
-
-    color: rgba(255, 255, 255, 0.82);
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 10px;
-
-    letter-spacing: 3px;
-
-    text-transform: uppercase;
-}
-
-
-.banner-palavras i {
-    width: 1px;
-    height: 12px;
-
-    display: block;
-
-    background:
-        rgba(255, 255, 255, 0.45);
-}
-
-
-
-/* ==========================================================
-   SEÇÃO MINISTÉRIO
-========================================================== */
-
-.ministerio {
-    width: 100%;
-
-    padding: 100px 20px;
-
-    background: #ffffff;
-}
-
-
-.ministerio-container {
+.pilares-container {
     width: 90%;
-    max-width: 850px;
+    max-width: 1350px;
 
     margin: 0 auto;
+}
+
+.secao-cabecalho {
+    margin-bottom: 55px;
 
     text-align: center;
 }
 
-
-.titulo-pequeno {
+.secao-cabecalho > p {
     margin-bottom: 15px;
 
-    color: #0875cf;
+    color: #0780d1;
 
-    font-size: 11px;
-    font-weight: 600;
+    font-size: 10px;
+    font-weight: 700;
 
     letter-spacing: 4px;
-
-    text-transform: uppercase;
 }
 
+.pilares-grid {
+    display: grid;
 
-.ministerio h2 {
-    color: #073562;
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.pilar-card {
+    min-height: 330px;
+
+    padding: 35px 30px;
+
+    position: relative;
+
+    background: #ffffff;
+
+    border:
+        1px solid
+        #e0ebf3;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.pilar-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 20px 40px
+        rgba(0,60,110,0.08);
+}
+
+.pilar-card.destaque {
+    background:
+        linear-gradient(
+            145deg,
+            #043566,
+            #0875bd
+        );
+
+    border-color: transparent;
+
+    color: #ffffff;
+}
+
+.numero {
+    position: absolute;
+
+    top: 25px;
+    right: 25px;
+
+    color:
+        rgba(5,87,150,0.13);
+
+    font-family: Georgia, serif;
+
+    font-size: 42px;
+}
+
+.pilar-card.destaque .numero {
+    color:
+        rgba(255,255,255,0.14);
+}
+
+.icone-pilar {
+    margin-top: 30px;
+
+    color: #0784d7;
+
+    font-size: 25px;
+}
+
+.pilar-card.destaque .icone-pilar {
+    color: #76caff;
+}
+
+.pilar-card h3 {
+    margin: 30px 0 17px;
+
+    color: #07345e;
 
     font-family:
         Georgia,
         "Times New Roman",
         serif;
 
-    font-size: clamp(34px, 4vw, 50px);
+    font-size: 27px;
+
+    font-weight: 400;
+}
+
+.pilar-card.destaque h3 {
+    color: #ffffff;
+}
+
+.pilar-card p {
+    color: #6b7e90;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.pilar-card.destaque p {
+    color:
+        rgba(255,255,255,0.80);
+}
+
+
+/* =========================================================
+   CURSOS
+========================================================= */
+
+.chamada-cursos {
+    padding: 85px 20px;
+
+    background:
+        linear-gradient(
+            115deg,
+            #021d39,
+            #064b85,
+            #0876b9
+        );
+}
+
+.chamada-cursos-container {
+    width: 88%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+.chamada-cursos .mini-titulo {
+    color: #71c9ff;
+}
+
+.chamada-cursos h2 {
+    max-width: 720px;
+
+    color: #ffffff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            35px,
+            4vw,
+            52px
+        );
 
     font-weight: 400;
 
     line-height: 1.15;
 }
 
-
-.ministerio h2 span {
+.chamada-cursos h2 span {
     display: block;
 
-    color: #0875ca;
+    color: #70c7ff;
+}
+
+.btn-claro {
+    min-width: 200px;
+    min-height: 52px;
+
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    color: #074d84;
+
+    background: #ffffff;
+
+    border-radius: 5px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
 }
 
 
-.linha-titulo {
-    width: 50px;
-    height: 2px;
+/* =========================================================
+   AGENDA
+========================================================= */
 
-    margin: 23px auto;
+.agenda-home {
+    padding: 110px 20px;
 
-    border-radius: 10px;
-
-    background: #0878d2;
+    background: #ffffff;
 }
 
-
-.texto-ministerio {
-    max-width: 680px;
+.agenda-home-container {
+    width: 88%;
+    max-width: 1200px;
 
     margin: 0 auto;
 
-    color: #667a8c;
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        0.8fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.agenda-texto > p:not(.mini-titulo) {
+    max-width: 580px;
+
+    margin-top: 25px;
+
+    color: #687d90;
 
     font-size: 16px;
 
     line-height: 1.8;
 }
 
-
-.btn-ministerio {
-    min-height: 47px;
+.btn-agenda {
+    min-height: 48px;
 
     margin-top: 28px;
 
     padding: 0 25px;
 
     display: inline-flex;
-
     align-items: center;
-    justify-content: center;
-
-    border-radius: 5px;
-
-    background: #0872c8;
 
     color: #ffffff;
 
-    font-size: 11px;
-    font-weight: 600;
+    background: #0878c9;
 
-    letter-spacing: 0.2px;
+    border-radius: 5px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.agenda-decoracao {
+    min-height: 360px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f0f8fd,
+            #e3f2fc
+        );
+}
+
+.agenda-circulo {
+    width: 230px;
+    height: 230px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(7,119,198,0.25);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 35px
+        rgba(7,119,198,0.04);
+}
+
+.agenda-circulo span {
+    color: #0781d1;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 5px;
+}
+
+.agenda-circulo strong {
+    margin-top: 7px;
+
+    color: #07365f;
+
+    font-family: Georgia, serif;
+
+    font-size: 52px;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   OFERTAS
+========================================================= */
+
+.ofertas-home {
+    padding: 80px 20px;
+
+    background: #edf7fd;
+
+    border-top: 1px solid #deedf6;
+}
+
+.ofertas-home-container {
+    width: 88%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.ofertas-home-container > div:first-child > p {
+    margin-bottom: 12px;
+
+    color: #0780cf;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+.ofertas-home h2 {
+    color: #07345f;
+
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(
+            35px,
+            4vw,
+            50px
+        );
+
+    font-weight: 400;
+}
+
+.ofertas-home h2 span {
+    color: #0780cf;
+}
+
+.ofertas-direita p {
+    margin-bottom: 20px;
+
+    color: #657a8e;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+.ofertas-direita a {
+    display: inline-flex;
+
+    gap: 20px;
+
+    color: #0878c8;
+
+    font-size: 11px;
+    font-weight: 700;
 
     text-transform: uppercase;
 }
 
 
+/* =========================================================
+   RODAPÉ
+========================================================= */
 
-/* ==========================================================
+.rodape {
+    color: #ffffff;
+
+    background: #021a32;
+}
+
+.rodape-container {
+    width: 90%;
+    max-width: 1300px;
+
+    margin: 0 auto;
+
+    padding: 75px 0;
+
+    display: grid;
+
+    grid-template-columns:
+        1.7fr
+        0.7fr
+        0.8fr
+        1fr;
+
+    gap: 60px;
+}
+
+.rodape-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.rodape-logo img {
+    width: 60px !important;
+    height: 60px !important;
+
+    object-fit: contain;
+}
+
+.rodape-logo div {
+    display: flex;
+    flex-direction: column;
+}
+
+.rodape-logo strong {
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+}
+
+.rodape-logo span {
+    margin-top: 4px;
+
+    color: #6bc5ff;
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+}
+
+.rodape-marca > p {
+    max-width: 320px;
+
+    margin-top: 20px;
+
+    color:
+        rgba(255,255,255,0.58);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+.rodape-coluna {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.rodape-coluna h3 {
+    margin-bottom: 10px;
+
+    color: #ffffff;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    font-weight: 400;
+}
+
+.rodape-coluna a,
+.rodape-coluna p {
+    color:
+        rgba(255,255,255,0.58);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+.rodape-coluna a:hover {
+    color: #70c9ff;
+}
+
+.rodape-final {
+    padding: 20px;
+
+    text-align: center;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.08);
+}
+
+.rodape-final p {
+    color:
+        rgba(255,255,255,0.42);
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
    NOTEBOOK
-========================================================== */
+========================================================= */
 
 @media (max-width: 1250px) {
 
@@ -953,102 +1500,75 @@ img {
         width: 96%;
     }
 
-
-    .logo {
-        width: 280px;
-        height: 68px;
-
-        flex-basis: 280px;
-    }
-
-
     .logo img {
-        width: 280px !important;
-        max-width: 280px !important;
-
-        height: 68px !important;
-        max-height: 68px !important;
+        width: 62px !important;
+        height: 62px !important;
     }
 
+    .logo-texto strong {
+        font-size: 18px;
+    }
+
+    .logo-texto span {
+        font-size: 7px;
+        letter-spacing: 2.5px;
+    }
 
     .menu {
-        gap: 16px;
+        gap: 15px;
     }
-
 
     .menu > a:not(.botao-cursos-mobile) {
-        font-size: 10px;
-    }
-
-
-    .botao-cursos {
-        width: 102px;
-
-        flex-basis: 102px;
-
-        margin-left: 18px;
-
         font-size: 9px;
     }
 
+    .botao-cursos {
+        width: 100px;
+        flex-basis: 100px;
 
-    .banner-container {
-        width: 92%;
-
-        gap: 40px;
+        margin-left: 18px;
     }
 
 }
 
 
-
-/* ==========================================================
+/* =========================================================
    TABLET
-========================================================== */
+========================================================= */
 
 @media (max-width: 1000px) {
 
     .topo,
     .topo-container {
-        height: 78px;
+        height: 76px;
     }
-
 
     .topo-container {
         width: 92%;
     }
 
-
-    .logo {
-        width: 270px;
-        height: 64px;
-
-        flex-basis: 270px;
-    }
-
-
     .logo img {
-        width: 270px !important;
-        max-width: 270px !important;
-
-        height: 64px !important;
-        max-height: 64px !important;
+        width: 57px !important;
+        height: 57px !important;
     }
 
+    .logo-texto strong {
+        font-size: 18px;
+    }
 
     .menu {
+        width: 100%;
+
         position: absolute;
 
         top: 100%;
         left: 0;
 
-        width: 100%;
+        display: none;
 
         margin: 0;
 
         padding: 8px 5% 20px;
-
-        display: none;
 
         flex-direction: column;
         align-items: stretch;
@@ -1057,20 +1577,16 @@ img {
 
         background: #ffffff;
 
-        border-top:
-            1px solid
-            #e1eaf2;
+        border-top: 1px solid #e1eaf2;
 
         box-shadow:
             0 15px 30px
-            rgba(0, 35, 70, 0.12);
+            rgba(0,35,70,0.12);
     }
-
 
     .menu.aberto {
         display: flex;
     }
-
 
     .menu > a:not(.botao-cursos-mobile) {
         width: 100%;
@@ -1078,93 +1594,65 @@ img {
 
         padding: 16px 4px;
 
-        border-bottom:
-            1px solid
-            #edf2f6;
+        border-bottom: 1px solid #edf2f6;
 
         font-size: 12px;
-
-        font-weight: 500;
     }
-
 
     .menu > a:not(.botao-cursos-mobile)::after {
         display: none;
     }
 
-
     .hamburguer {
         display: flex;
     }
-
 
     .botao-cursos {
         margin-left: auto;
     }
 
-
-    .banner {
+    .hero {
         min-height: auto;
     }
 
-
-    .banner-container {
+    .hero-container {
         width: 88%;
 
-        padding: 70px 0 105px;
+        padding: 70px 0 100px;
 
         grid-template-columns: 1fr;
 
-        gap: 45px;
+        gap: 30px;
 
         text-align: center;
     }
 
-
-    .banner-conteudo {
+    .hero-conteudo {
         margin: 0 auto;
     }
 
-
-    .divisor {
-        margin: 25px auto;
+    .hero-divisor {
+        margin: 27px auto;
     }
 
-
-    .versiculo {
+    .hero-versiculo {
         margin: 0 auto;
     }
 
-
-    .botoes-banner {
+    .hero-botoes {
         justify-content: center;
     }
 
-
-    .banner-visual {
+    .hero-visual {
         min-height: 340px;
     }
 
-
-    .circulo-1 {
-        width: 320px;
-        height: 320px;
+    .simbolo-fundo {
+        width: 310px;
+        height: 310px;
     }
 
-
-    .circulo-2 {
-        width: 245px;
-        height: 245px;
-    }
-
-
-    .circulo-3 {
-        width: 170px;
-        height: 170px;
-    }
-
-
-    .banner-palavras {
+    .hero-palavras {
         width: 90%;
 
         right: 5%;
@@ -1172,69 +1660,94 @@ img {
         justify-content: center;
     }
 
+    .ministerio-conteudo {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .pilares-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .agenda-home-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .ofertas-home-container {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .rodape-container {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
 }
 
 
-
-/* ==========================================================
+/* =========================================================
    CELULAR
-========================================================== */
+========================================================= */
 
 @media (max-width: 650px) {
 
     .topo,
     .topo-container {
-        height: 70px;
+        height: 68px;
     }
-
 
     .topo-container {
         width: 94%;
     }
 
-
     .logo {
-        width: 215px;
-        height: 57px;
-
-        flex-basis: 215px;
+        gap: 8px;
     }
-
 
     .logo img {
-        width: 215px !important;
-        max-width: 215px !important;
-
-        height: 57px !important;
-        max-height: 57px !important;
+        width: 50px !important;
+        height: 50px !important;
     }
 
+    .logo-texto strong {
+        font-size: 15px;
+    }
+
+    .logo-texto span {
+        font-size: 6px;
+        letter-spacing: 1.8px;
+    }
 
     .botao-cursos {
         display: none;
     }
 
-
     .hamburguer {
         margin-left: auto;
-    }
-
-
-    .botao-cursos-mobile {
-        min-height: 47px;
-
-        margin-top: 14px;
 
         display: flex;
+    }
 
+    .botao-cursos-mobile {
+        min-height: 46px;
+
+        margin-top: 13px;
+
+        display: flex;
         align-items: center;
         justify-content: center;
 
-        border-radius: 5px;
-
-        background: #0873ca;
-
         color: #ffffff;
+
+        background: #0877c8;
+
+        border-radius: 5px;
 
         font-size: 11px;
         font-weight: 600;
@@ -1242,152 +1755,148 @@ img {
         text-transform: uppercase;
     }
 
-
-    .banner-container {
+    .hero-container {
         width: 88%;
 
-        padding: 58px 0 85px;
+        padding: 60px 0 80px;
     }
 
-
-    .chamada {
-        margin-bottom: 16px;
-
-        font-size: 10px;
+    .hero-superior {
+        font-size: 9px;
 
         letter-spacing: 4px;
     }
 
-
-    .banner h1 {
+    .hero h1 {
         font-size:
             clamp(
-                40px,
+                41px,
                 13vw,
                 56px
             );
     }
 
+    .hero-subtitulo {
+        font-size: 9px;
 
-    .banner h1 span {
-        font-size: 0.80em;
-
-        line-height: 1.05;
-    }
-
-
-    .subtitulo {
-        margin-top: 23px;
-
-        font-size: 10px;
-
-        letter-spacing: 4px;
+        letter-spacing: 3.5px;
 
         line-height: 1.7;
     }
 
-
-    .versiculo p {
+    .hero-versiculo p {
         font-size: 16px;
     }
 
-
-    .versiculo strong {
-        font-size: 15px;
-    }
-
-
-    .botoes-banner {
+    .hero-botoes {
         flex-direction: column;
     }
 
-
-    .btn-principal,
-    .btn-secundario {
+    .btn-azul,
+    .btn-transparente {
         width: 100%;
-
-        min-height: 52px;
-
-        font-size: 11px;
     }
 
-
-    .banner-visual {
-        min-height: 270px;
+    .hero-visual {
+        min-height: 280px;
     }
 
-
-    .mensagem-banner {
-        font-size: 26px;
+    .simbolo-fundo {
+        width: 250px;
+        height: 250px;
     }
 
-
-    .mensagem-banner strong {
-        font-size: 36px;
+    .hero-mensagem strong {
+        font-size: 40px;
     }
 
-
-    .banner-palavras {
-        bottom: 18px;
-
-        gap: 7px;
-
-        font-size: 7px;
-
-        letter-spacing: 1px;
+    .hero-mensagem span {
+        font-size: 21px;
     }
 
-
-    .banner-palavras i {
-        height: 8px;
+    .hero-palavras {
+        display: none;
     }
 
+    .ministerio,
+    .pilares,
+    .agenda-home {
+        padding: 75px 20px;
+    }
 
-    .ministerio {
+    .ministerio-titulo {
+        margin-bottom: 40px;
+    }
+
+    .ministerio-destaque {
+        padding: 45px 30px;
+    }
+
+    .ministerio-destaque p {
+        font-size: 21px;
+    }
+
+    .pilares-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pilar-card {
+        min-height: auto;
+
+        padding: 35px 28px;
+    }
+
+    .chamada-cursos {
         padding: 70px 20px;
     }
 
+    .chamada-cursos-container {
+        width: 90%;
 
-    .texto-ministerio {
-        font-size: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-claro {
+        width: 100%;
+    }
+
+    .agenda-decoracao {
+        min-height: 300px;
+    }
+
+    .ofertas-home {
+        padding: 65px 20px;
+    }
+
+    .rodape-container {
+        padding: 60px 0;
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
     }
 
 }
 
 
-
-/* ==========================================================
+/* =========================================================
    CELULAR PEQUENO
-========================================================== */
+========================================================= */
 
 @media (max-width: 400px) {
 
-    .logo {
-        width: 185px;
-        height: 54px;
-
-        flex-basis: 185px;
+    .logo-texto strong {
+        font-size: 13px;
     }
 
+    .logo-texto span {
+        letter-spacing: 1.3px;
+    }
 
     .logo img {
-        width: 185px !important;
-        max-width: 185px !important;
-
-        height: 54px !important;
-        max-height: 54px !important;
-    }
-
-
-    .hamburguer {
-        width: 36px;
-
-        margin-left: 5px;
-    }
-
-
-    .banner-palavras {
-        display: none;
+        width: 46px !important;
+        height: 46px !important;
     }
 
 }
