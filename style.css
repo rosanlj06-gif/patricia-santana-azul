@@ -1,88 +1,71 @@
-/* ======================================================
-   RESET
-====================================================== */
+/* ==========================================================
+   RESET GERAL
+========================================================== */
 
-html,
-body,
-div,
-span,
-header,
-nav,
-main,
-section,
-a,
-img,
-p,
-h1,
-h2,
-strong,
-small,
-button {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
 
-
 body {
+    margin: 0;
+    padding: 0;
     width: 100%;
     min-height: 100vh;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 
     background: #ffffff;
-
-    color: #082f5d;
+    color: #082f5b;
 
     overflow-x: hidden;
 }
-
 
 a {
     text-decoration: none;
 }
 
-
-
-/* ======================================================
-   HEADER
-====================================================== */
-
-.header {
-    width: 100%;
-    height: 88px;
-
-    background:
-        linear-gradient(
-            110deg,
-            #ffffff 0%,
-            #ffffff 72%,
-            #f1f8fe 100%
-        );
-
-    border-bottom: 1px solid #dce8f1;
-
-    box-shadow:
-        0 4px 15px
-        rgba(0, 48, 94, 0.04);
-
-    position: relative;
-    z-index: 999;
+img {
+    display: block;
 }
 
 
-.header-container {
+
+/* ==========================================================
+   CABEÇALHO
+========================================================== */
+
+.topo {
+    width: 100%;
+    height: 90px;
+
+    position: relative;
+    z-index: 1000;
+
+    background: linear-gradient(
+        110deg,
+        #ffffff 0%,
+        #ffffff 70%,
+        #f2f8fd 100%
+    );
+
+    border-bottom: 1px solid #dce7f0;
+
+    box-shadow:
+        0 4px 15px
+        rgba(5, 50, 90, 0.04);
+}
+
+
+.topo-container {
     width: 94%;
     max-width: 1450px;
-    height: 88px;
+    height: 90px;
 
     margin: 0 auto;
 
@@ -92,30 +75,31 @@ a {
 
 
 
-/* ======================================================
-   LOGO DO CABEÇALHO
-====================================================== */
+/* ==========================================================
+   LOGO
+========================================================== */
 
-.header-logo {
-    display: block;
+.logo {
+    width: 330px;
+    height: 75px;
 
-    width: 325px;
-    height: 74px;
+    flex: 0 0 330px;
 
-    flex: 0 0 325px;
+    display: flex;
+    align-items: center;
 
     overflow: hidden;
 }
 
 
-.header-logo img {
-    display: block !important;
+.logo img {
+    display: block;
 
-    width: 325px !important;
-    max-width: 325px !important;
+    width: 330px !important;
+    max-width: 330px !important;
 
-    height: 74px !important;
-    max-height: 74px !important;
+    height: 75px !important;
+    max-height: 75px !important;
 
     object-fit: contain !important;
     object-position: left center !important;
@@ -123,37 +107,34 @@ a {
 
 
 
-/* ======================================================
+/* ==========================================================
    MENU
-====================================================== */
+========================================================== */
 
-.header-menu {
+.menu {
     margin-left: auto;
 
     display: flex;
     align-items: center;
 
-    gap: 23px;
+    gap: 21px;
 }
 
 
-.menu-link {
-    height: 88px;
+.menu > a:not(.botao-cursos-mobile) {
+    height: 90px;
 
     position: relative;
 
     display: flex;
     align-items: center;
 
-    color: #062f59;
+    color: #082f59;
 
     font-size: 11px;
-
     font-weight: 500;
 
-    line-height: 1;
-
-    letter-spacing: 0;
+    letter-spacing: 0.1px;
 
     text-transform: uppercase;
 
@@ -163,32 +144,32 @@ a {
 }
 
 
-.menu-link:hover {
-    color: #0879d5;
+.menu > a:not(.botao-cursos-mobile):hover {
+    color: #0879d4;
 }
 
 
-.menu-link.active {
-    color: #0879d5;
+.menu > a.ativo {
+    color: #0879d4;
 
     font-weight: 600;
 }
 
 
-.menu-link::after {
+.menu > a:not(.botao-cursos-mobile)::after {
     content: "";
-
-    width: 0;
-    height: 2px;
 
     position: absolute;
 
     left: 50%;
     bottom: 24px;
 
-    background: #087bd7;
+    width: 0;
+    height: 2px;
 
-    border-radius: 10px;
+    border-radius: 20px;
+
+    background: #087bd8;
 
     transform: translateX(-50%);
 
@@ -196,22 +177,22 @@ a {
 }
 
 
-.menu-link:hover::after,
-.menu-link.active::after {
+.menu > a.ativo::after,
+.menu > a:not(.botao-cursos-mobile):hover::after {
     width: 100%;
 }
 
 
 
-/* ======================================================
+/* ==========================================================
    BOTÃO VER CURSOS
-====================================================== */
+========================================================== */
 
-.header-course-button {
+.botao-cursos {
     width: 110px;
     height: 43px;
 
-    margin-left: 28px;
+    margin-left: 27px;
 
     flex: 0 0 110px;
 
@@ -219,19 +200,17 @@ a {
     align-items: center;
     justify-content: center;
 
-    background:
-        linear-gradient(
-            135deg,
-            #0753a2,
-            #087bc9
-        );
-
     border-radius: 5px;
+
+    background: linear-gradient(
+        135deg,
+        #07529f,
+        #087bc9
+    );
 
     color: #ffffff;
 
     font-size: 10px;
-
     font-weight: 600;
 
     letter-spacing: 0.2px;
@@ -239,8 +218,8 @@ a {
     text-transform: uppercase;
 
     box-shadow:
-        0 6px 15px
-        rgba(4, 87, 167, 0.16);
+        0 7px 17px
+        rgba(4, 88, 168, 0.17);
 
     transition:
         transform 0.2s ease,
@@ -248,32 +227,34 @@ a {
 }
 
 
-.header-course-button:hover {
+.botao-cursos:hover {
     transform: translateY(-2px);
 
     box-shadow:
-        0 8px 20px
-        rgba(4, 87, 167, 0.25);
+        0 9px 22px
+        rgba(4, 88, 168, 0.25);
 }
 
 
-.mobile-course {
+.botao-cursos-mobile {
     display: none;
 }
 
 
 
-/* ======================================================
-   BOTÃO MENU CELULAR
-====================================================== */
+/* ==========================================================
+   HAMBÚRGUER
+========================================================== */
 
-.mobile-menu-button {
+.hamburguer {
     width: 42px;
     height: 42px;
 
-    display: none;
-
     margin-left: 15px;
+
+    padding: 0;
+
+    display: none;
 
     border: 0;
 
@@ -289,27 +270,29 @@ a {
 }
 
 
-.mobile-menu-button span {
+.hamburguer span {
     width: 25px;
     height: 2px;
 
     display: block;
 
-    background: #073765;
-
     border-radius: 10px;
+
+    background: #073663;
+
+    transition: 0.25s ease;
 }
 
 
 
-/* ======================================================
-   HERO
-====================================================== */
+/* ==========================================================
+   BANNER PRINCIPAL
+========================================================== */
 
-.hero {
+.banner {
     width: 100%;
 
-    min-height: calc(100vh - 88px);
+    min-height: calc(100vh - 90px);
 
     position: relative;
 
@@ -318,56 +301,54 @@ a {
     display: flex;
     align-items: center;
 
-    color: #ffffff;
-
     background:
 
         radial-gradient(
-            circle at 76% 32%,
-            rgba(52, 164, 244, 0.45),
-            transparent 30%
+            circle at 74% 28%,
+            rgba(47, 158, 239, 0.42),
+            transparent 31%
         ),
 
         radial-gradient(
-            circle at 58% 85%,
-            rgba(0, 125, 226, 0.20),
-            transparent 34%
+            circle at 61% 87%,
+            rgba(0, 121, 220, 0.23),
+            transparent 38%
         ),
 
         linear-gradient(
             110deg,
-            #02182f 0%,
-            #032b57 42%,
-            #07518f 72%,
-            #0e6bae 100%
+            #02172f 0%,
+            #022a55 43%,
+            #064f8e 72%,
+            #0c6daf 100%
         );
+
+    color: #ffffff;
 }
 
 
-.hero::before {
+.banner::before {
     content: "";
 
     position: absolute;
-
     inset: 0;
 
-    background:
-        linear-gradient(
-            125deg,
-            rgba(255,255,255,0.025),
-            transparent 40%
-        );
+    background: linear-gradient(
+        125deg,
+        rgba(255, 255, 255, 0.025),
+        transparent 45%
+    );
 
     pointer-events: none;
 }
 
 
 
-/* ======================================================
-   DECORAÇÃO
-====================================================== */
+/* ==========================================================
+   LUZES
+========================================================== */
 
-.hero-decoration {
+.luz {
     position: absolute;
 
     border-radius: 50%;
@@ -376,44 +357,42 @@ a {
 }
 
 
-.decoration-one {
-    width: 700px;
-    height: 700px;
+.luz-1 {
+    width: 750px;
+    height: 750px;
 
-    right: -200px;
-    top: -390px;
+    top: -480px;
+    right: -180px;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,0.20),
-            transparent 67%
-        );
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.20),
+        transparent 68%
+    );
 }
 
 
-.decoration-two {
+.luz-2 {
     width: 650px;
     height: 650px;
 
-    left: 42%;
-    bottom: -520px;
+    left: 38%;
+    bottom: -510px;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(17,147,239,0.30),
-            transparent 68%
-        );
+    background: radial-gradient(
+        circle,
+        rgba(0, 144, 255, 0.30),
+        transparent 68%
+    );
 }
 
 
 
-/* ======================================================
-   CONTAINER HERO
-====================================================== */
+/* ==========================================================
+   CONTAINER DO BANNER
+========================================================== */
 
-.hero-container {
+.banner-container {
     width: 90%;
     max-width: 1400px;
 
@@ -427,8 +406,8 @@ a {
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.1fr)
-        minmax(350px, 0.9fr);
+        minmax(0, 1.08fr)
+        minmax(360px, 0.92fr);
 
     align-items: center;
 
@@ -437,16 +416,16 @@ a {
 
 
 
-/* ======================================================
-   TEXTO
-====================================================== */
+/* ==========================================================
+   CONTEÚDO DO BANNER
+========================================================== */
 
-.hero-text {
-    max-width: 780px;
+.banner-conteudo {
+    max-width: 790px;
 }
 
 
-.hero-small-title {
+.chamada {
     margin-bottom: 19px;
 
     font-family:
@@ -455,20 +434,30 @@ a {
         serif;
 
     font-size: 16px;
-
     font-weight: 400;
 
     letter-spacing: 7px;
 
-    color: rgba(255,255,255,0.82);
+    color: rgba(255, 255, 255, 0.83);
 }
 
 
-.hero-text h1 {
+
+/* ==========================================================
+   TÍTULO
+========================================================== */
+
+.banner h1 {
+    margin: 0;
+
     font-family:
         Georgia,
         "Times New Roman",
         serif;
+
+    color: #ffffff;
+
+    font-size: clamp(52px, 5.3vw, 86px);
 
     font-weight: 400;
 
@@ -478,48 +467,35 @@ a {
 }
 
 
-.hero-text h1 span {
+.banner h1 span {
     display: block;
 
-    font-size:
-        clamp(
-            52px,
-            5.3vw,
-            86px
-        );
+    margin-top: 8px;
+
+    color: #6bc0ff;
+
+    font-size: 0.80em;
 
     font-weight: 400;
 }
 
 
-.hero-text h1 strong {
-    display: block;
 
-    margin-top: 7px;
+/* ==========================================================
+   SUBTÍTULO
+========================================================== */
 
-    color: #69beff;
-
-    font-size:
-        clamp(
-            41px,
-            4.3vw,
-            69px
-        );
-
-    font-weight: 400;
-}
-
-
-.hero-ministry {
-    margin-top: 28px;
+.subtitulo {
+    margin-top: 29px;
 
     font-family:
         Georgia,
         "Times New Roman",
         serif;
 
-    font-size: 15px;
+    color: #ffffff;
 
+    font-size: 15px;
     font-weight: 400;
 
     letter-spacing: 7px;
@@ -529,12 +505,12 @@ a {
 
 
 
-/* ======================================================
+/* ==========================================================
    DIVISOR
-====================================================== */
+========================================================== */
 
-.hero-divider {
-    width: 550px;
+.divisor {
+    width: 555px;
     max-width: 100%;
 
     margin: 25px 0;
@@ -546,16 +522,16 @@ a {
 }
 
 
-.hero-divider span {
-    height: 1px;
-
+.divisor span {
     flex: 1;
 
-    background: rgba(255,255,255,0.55);
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.55);
 }
 
 
-.hero-divider i {
+.divisor i {
     width: 14px;
     height: 14px;
 
@@ -563,27 +539,28 @@ a {
 
     transform: rotate(45deg);
 
-    border: 1px solid rgba(255,255,255,0.80);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.80);
 
-    background:
-        linear-gradient(
-            135deg,
-            #63c8ff,
-            #087bd8
-        );
+    background: linear-gradient(
+        135deg,
+        #64c8ff,
+        #087bd8
+    );
 
     box-shadow:
         0 0 14px
-        rgba(45,168,255,0.55);
+        rgba(45, 168, 255, 0.60);
 }
 
 
 
-/* ======================================================
+/* ==========================================================
    VERSÍCULO
-====================================================== */
+========================================================== */
 
-.hero-verse {
+.versiculo {
     width: 590px;
     max-width: 100%;
 
@@ -596,8 +573,8 @@ a {
 }
 
 
-.hero-verse p {
-    color: rgba(255,255,255,0.93);
+.versiculo p {
+    color: rgba(255, 255, 255, 0.94);
 
     font-size: 20px;
 
@@ -607,28 +584,31 @@ a {
 }
 
 
-.hero-verse small {
+.versiculo strong {
     display: block;
 
-    margin-top: 4px;
+    margin-top: 5px;
 
     color: #ffffff;
 
-    font-size: 18px;
+    font-size: 17px;
+    font-weight: 400;
 
     font-style: italic;
 }
 
 
 
-/* ======================================================
-   BOTÕES
-====================================================== */
+/* ==========================================================
+   BOTÕES DO BANNER
+========================================================== */
 
-.hero-buttons {
+.botoes-banner {
     margin-top: 34px;
 
     display: flex;
+
+    align-items: center;
 
     flex-wrap: wrap;
 
@@ -636,138 +616,139 @@ a {
 }
 
 
-.button-main,
-.button-outline {
-    min-height: 55px;
+.btn-principal,
+.btn-secundario {
+    min-height: 54px;
 
-    padding: 0 28px;
+    padding: 0 27px;
 
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
     border-radius: 6px;
 
     color: #ffffff;
 
-    font-size: 12px;
-
+    font-size: 11px;
     font-weight: 600;
 
-    letter-spacing: 0.15px;
+    letter-spacing: 0.2px;
 
     text-transform: uppercase;
 
-    transition: transform 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
-.button-main:hover,
-.button-outline:hover {
+.btn-principal:hover,
+.btn-secundario:hover {
     transform: translateY(-2px);
 }
 
 
-.button-main {
-    border: 1px solid #43b3ff;
+.btn-principal {
+    background: linear-gradient(
+        135deg,
+        #0986e5,
+        #075cae
+    );
 
-    background:
-        linear-gradient(
-            135deg,
-            #0985e4,
-            #075bae
-        );
+    border: 1px solid #45b4ff;
+
+    box-shadow:
+        0 9px 23px
+        rgba(0, 87, 170, 0.22);
 }
 
 
-.button-outline {
+.btn-secundario {
     gap: 20px;
 
-    border: 1px solid #94d1fa;
+    background:
+        rgba(2, 30, 62, 0.35);
 
-    background: rgba(2,30,62,0.35);
+    border: 1px solid #93d2fa;
 }
 
 
-.button-outline span {
+.btn-secundario span {
     font-size: 23px;
+    font-weight: 300;
 }
 
 
 
-/* ======================================================
-   LADO DIREITO
-====================================================== */
+/* ==========================================================
+   VISUAL DIREITO
+========================================================== */
 
-.hero-right {
-    min-height: 500px;
+.banner-visual {
+    min-height: 480px;
 
     position: relative;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 }
 
 
-.hero-circle {
-    width: 430px;
-    height: 430px;
-
-    position: relative;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.circle-one,
-.circle-two,
-.circle-three {
+.circulo {
     position: absolute;
 
     border-radius: 50%;
 }
 
 
-.circle-one {
+.circulo-1 {
     width: 430px;
     height: 430px;
 
-    border: 1px solid rgba(160,220,255,0.30);
+    border:
+        1px solid
+        rgba(158, 219, 255, 0.30);
 }
 
 
-.circle-two {
+.circulo-2 {
     width: 330px;
     height: 330px;
 
-    border: 1px solid rgba(160,220,255,0.20);
+    border:
+        1px solid
+        rgba(158, 219, 255, 0.20);
 }
 
 
-.circle-three {
+.circulo-3 {
     width: 230px;
     height: 230px;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(104,192,255,0.22),
-            transparent 68%
-        );
+    border:
+        1px solid
+        rgba(158, 219, 255, 0.17);
 
-    border: 1px solid rgba(160,220,255,0.18);
+    background: radial-gradient(
+        circle,
+        rgba(105, 193, 255, 0.20),
+        transparent 68%
+    );
 }
 
 
-.hero-message {
-    position: absolute;
+
+/* ==========================================================
+   MENSAGEM DIREITA
+========================================================== */
+
+.mensagem-banner {
+    position: relative;
+    z-index: 3;
 
     display: flex;
 
@@ -775,40 +756,40 @@ a {
 
     align-items: center;
 
-    color: rgba(255,255,255,0.92);
+    color: rgba(255, 255, 255, 0.94);
 
     font-family:
         Georgia,
         "Times New Roman",
         serif;
 
-    font-size: 35px;
+    font-size: 34px;
 
     font-style: italic;
 
-    line-height: 1.08;
+    line-height: 1.1;
 
     text-shadow:
-        0 3px 15px
-        rgba(0,0,0,0.18);
+        0 3px 14px
+        rgba(0, 0, 0, 0.18);
 }
 
 
-.hero-message strong {
-    color: #73c5ff;
-
-    font-weight: 400;
+.mensagem-banner strong {
+    color: #75c7ff;
 
     font-size: 46px;
+
+    font-weight: 400;
 }
 
 
 
-/* ======================================================
-   TÓPICOS
-====================================================== */
+/* ==========================================================
+   PALAVRAS INFERIORES
+========================================================== */
 
-.hero-bottom {
+.banner-palavras {
     position: absolute;
 
     right: 5%;
@@ -817,11 +798,12 @@ a {
     z-index: 5;
 
     display: flex;
+
     align-items: center;
 
     gap: 16px;
 
-    color: rgba(255,255,255,0.82);
+    color: rgba(255, 255, 255, 0.82);
 
     font-family:
         Georgia,
@@ -836,29 +818,32 @@ a {
 }
 
 
-.hero-bottom i {
+.banner-palavras i {
     width: 1px;
     height: 12px;
 
     display: block;
 
-    background: rgba(255,255,255,0.45);
+    background:
+        rgba(255, 255, 255, 0.45);
 }
 
 
 
-/* ======================================================
-   SEGUNDA SEÇÃO
-====================================================== */
+/* ==========================================================
+   SEÇÃO MINISTÉRIO
+========================================================== */
 
-.ministry-section {
+.ministerio {
+    width: 100%;
+
     padding: 100px 20px;
 
     background: #ffffff;
 }
 
 
-.ministry-container {
+.ministerio-container {
     width: 90%;
     max-width: 850px;
 
@@ -868,20 +853,21 @@ a {
 }
 
 
-.section-small {
-    margin-bottom: 14px;
+.titulo-pequeno {
+    margin-bottom: 15px;
 
-    color: #0875d0;
+    color: #0875cf;
 
     font-size: 11px;
-
     font-weight: 600;
 
     letter-spacing: 4px;
+
+    text-transform: uppercase;
 }
 
 
-.ministry-container h2 {
+.ministerio h2 {
     color: #073562;
 
     font-family:
@@ -889,12 +875,7 @@ a {
         "Times New Roman",
         serif;
 
-    font-size:
-        clamp(
-            34px,
-            4vw,
-            50px
-        );
+    font-size: clamp(34px, 4vw, 50px);
 
     font-weight: 400;
 
@@ -902,31 +883,31 @@ a {
 }
 
 
-.ministry-container h2 span {
+.ministerio h2 span {
     display: block;
 
-    color: #0875c9;
+    color: #0875ca;
 }
 
 
-.section-divider {
+.linha-titulo {
     width: 50px;
     height: 2px;
 
-    margin: 22px auto;
-
-    background: #0878d2;
+    margin: 23px auto;
 
     border-radius: 10px;
+
+    background: #0878d2;
 }
 
 
-.section-text {
+.texto-ministerio {
     max-width: 680px;
 
     margin: 0 auto;
 
-    color: #667a8d;
+    color: #667a8c;
 
     font-size: 16px;
 
@@ -934,7 +915,7 @@ a {
 }
 
 
-.section-button {
+.btn-ministerio {
     min-height: 47px;
 
     margin-top: 28px;
@@ -946,33 +927,34 @@ a {
     align-items: center;
     justify-content: center;
 
-    background: #0872c9;
-
     border-radius: 5px;
+
+    background: #0872c8;
 
     color: #ffffff;
 
     font-size: 11px;
-
     font-weight: 600;
+
+    letter-spacing: 0.2px;
 
     text-transform: uppercase;
 }
 
 
 
-/* ======================================================
+/* ==========================================================
    NOTEBOOK
-====================================================== */
+========================================================== */
 
 @media (max-width: 1250px) {
 
-    .header-container {
+    .topo-container {
         width: 96%;
     }
 
 
-    .header-logo {
+    .logo {
         width: 280px;
         height: 68px;
 
@@ -980,7 +962,7 @@ a {
     }
 
 
-    .header-logo img {
+    .logo img {
         width: 280px !important;
         max-width: 280px !important;
 
@@ -989,17 +971,17 @@ a {
     }
 
 
-    .header-menu {
-        gap: 17px;
+    .menu {
+        gap: 16px;
     }
 
 
-    .menu-link {
+    .menu > a:not(.botao-cursos-mobile) {
         font-size: 10px;
     }
 
 
-    .header-course-button {
+    .botao-cursos {
         width: 102px;
 
         flex-basis: 102px;
@@ -1009,28 +991,35 @@ a {
         font-size: 9px;
     }
 
+
+    .banner-container {
+        width: 92%;
+
+        gap: 40px;
+    }
+
 }
 
 
 
-/* ======================================================
+/* ==========================================================
    TABLET
-====================================================== */
+========================================================== */
 
 @media (max-width: 1000px) {
 
-    .header,
-    .header-container {
+    .topo,
+    .topo-container {
         height: 78px;
     }
 
 
-    .header-container {
+    .topo-container {
         width: 92%;
     }
 
 
-    .header-logo {
+    .logo {
         width: 270px;
         height: 64px;
 
@@ -1038,7 +1027,7 @@ a {
     }
 
 
-    .header-logo img {
+    .logo img {
         width: 270px !important;
         max-width: 270px !important;
 
@@ -1047,19 +1036,19 @@ a {
     }
 
 
-    .header-menu {
-        width: 100%;
-
+    .menu {
         position: absolute;
 
         top: 100%;
         left: 0;
 
-        display: none;
+        width: 100%;
 
         margin: 0;
 
         padding: 8px 5% 20px;
+
+        display: none;
 
         flex-direction: column;
         align-items: stretch;
@@ -1068,26 +1057,30 @@ a {
 
         background: #ffffff;
 
-        border-top: 1px solid #e1eaf2;
+        border-top:
+            1px solid
+            #e1eaf2;
 
         box-shadow:
             0 15px 30px
-            rgba(0,35,70,0.12);
+            rgba(0, 35, 70, 0.12);
     }
 
 
-    .header-menu.open {
+    .menu.aberto {
         display: flex;
     }
 
 
-    .menu-link {
+    .menu > a:not(.botao-cursos-mobile) {
         width: 100%;
         height: auto;
 
         padding: 16px 4px;
 
-        border-bottom: 1px solid #edf2f6;
+        border-bottom:
+            1px solid
+            #edf2f6;
 
         font-size: 12px;
 
@@ -1095,27 +1088,27 @@ a {
     }
 
 
-    .menu-link::after {
+    .menu > a:not(.botao-cursos-mobile)::after {
         display: none;
     }
 
 
-    .mobile-menu-button {
+    .hamburguer {
         display: flex;
     }
 
 
-    .header-course-button {
+    .botao-cursos {
         margin-left: auto;
     }
 
 
-    .hero {
+    .banner {
         min-height: auto;
     }
 
 
-    .hero-container {
+    .banner-container {
         width: 88%;
 
         padding: 70px 0 105px;
@@ -1128,56 +1121,50 @@ a {
     }
 
 
-    .hero-text {
+    .banner-conteudo {
         margin: 0 auto;
     }
 
 
-    .hero-divider {
+    .divisor {
         margin: 25px auto;
     }
 
 
-    .hero-verse {
+    .versiculo {
         margin: 0 auto;
     }
 
 
-    .hero-buttons {
+    .botoes-banner {
         justify-content: center;
     }
 
 
-    .hero-right {
-        min-height: 350px;
+    .banner-visual {
+        min-height: 340px;
     }
 
 
-    .hero-circle {
+    .circulo-1 {
         width: 320px;
         height: 320px;
     }
 
 
-    .circle-one {
-        width: 320px;
-        height: 320px;
-    }
-
-
-    .circle-two {
+    .circulo-2 {
         width: 245px;
         height: 245px;
     }
 
 
-    .circle-three {
+    .circulo-3 {
         width: 170px;
         height: 170px;
     }
 
 
-    .hero-bottom {
+    .banner-palavras {
         width: 90%;
 
         right: 5%;
@@ -1189,24 +1176,24 @@ a {
 
 
 
-/* ======================================================
+/* ==========================================================
    CELULAR
-====================================================== */
+========================================================== */
 
 @media (max-width: 650px) {
 
-    .header,
-    .header-container {
+    .topo,
+    .topo-container {
         height: 70px;
     }
 
 
-    .header-container {
+    .topo-container {
         width: 94%;
     }
 
 
-    .header-logo {
+    .logo {
         width: 215px;
         height: 57px;
 
@@ -1214,7 +1201,7 @@ a {
     }
 
 
-    .header-logo img {
+    .logo img {
         width: 215px !important;
         max-width: 215px !important;
 
@@ -1223,17 +1210,17 @@ a {
     }
 
 
-    .header-course-button {
+    .botao-cursos {
         display: none;
     }
 
 
-    .mobile-menu-button {
+    .hamburguer {
         margin-left: auto;
     }
 
 
-    .mobile-course {
+    .botao-cursos-mobile {
         min-height: 47px;
 
         margin-top: 14px;
@@ -1243,35 +1230,36 @@ a {
         align-items: center;
         justify-content: center;
 
-        background: #0873ca;
-
         border-radius: 5px;
+
+        background: #0873ca;
 
         color: #ffffff;
 
         font-size: 11px;
-
         font-weight: 600;
 
         text-transform: uppercase;
     }
 
 
-    .hero-container {
+    .banner-container {
         width: 88%;
 
         padding: 58px 0 85px;
     }
 
 
-    .hero-small-title {
+    .chamada {
+        margin-bottom: 16px;
+
         font-size: 10px;
 
         letter-spacing: 4px;
     }
 
 
-    .hero-text h1 span {
+    .banner h1 {
         font-size:
             clamp(
                 40px,
@@ -1281,19 +1269,16 @@ a {
     }
 
 
-    .hero-text h1 strong {
-        font-size:
-            clamp(
-                33px,
-                10vw,
-                46px
-            );
+    .banner h1 span {
+        font-size: 0.80em;
 
         line-height: 1.05;
     }
 
 
-    .hero-ministry {
+    .subtitulo {
+        margin-top: 23px;
+
         font-size: 10px;
 
         letter-spacing: 4px;
@@ -1302,23 +1287,23 @@ a {
     }
 
 
-    .hero-verse p {
+    .versiculo p {
         font-size: 16px;
     }
 
 
-    .hero-verse small {
+    .versiculo strong {
         font-size: 15px;
     }
 
 
-    .hero-buttons {
+    .botoes-banner {
         flex-direction: column;
     }
 
 
-    .button-main,
-    .button-outline {
+    .btn-principal,
+    .btn-secundario {
         width: 100%;
 
         min-height: 52px;
@@ -1327,22 +1312,22 @@ a {
     }
 
 
-    .hero-right {
-        min-height: 280px;
+    .banner-visual {
+        min-height: 270px;
     }
 
 
-    .hero-message {
+    .mensagem-banner {
         font-size: 26px;
     }
 
 
-    .hero-message strong {
+    .mensagem-banner strong {
         font-size: 36px;
     }
 
 
-    .hero-bottom {
+    .banner-palavras {
         bottom: 18px;
 
         gap: 7px;
@@ -1353,26 +1338,31 @@ a {
     }
 
 
-    .hero-bottom i {
+    .banner-palavras i {
         height: 8px;
     }
 
 
-    .ministry-section {
+    .ministerio {
         padding: 70px 20px;
+    }
+
+
+    .texto-ministerio {
+        font-size: 15px;
     }
 
 }
 
 
 
-/* ======================================================
+/* ==========================================================
    CELULAR PEQUENO
-====================================================== */
+========================================================== */
 
 @media (max-width: 400px) {
 
-    .header-logo {
+    .logo {
         width: 185px;
         height: 54px;
 
@@ -1380,7 +1370,7 @@ a {
     }
 
 
-    .header-logo img {
+    .logo img {
         width: 185px !important;
         max-width: 185px !important;
 
@@ -1389,7 +1379,14 @@ a {
     }
 
 
-    .hero-bottom {
+    .hamburguer {
+        width: 36px;
+
+        margin-left: 5px;
+    }
+
+
+    .banner-palavras {
         display: none;
     }
 
