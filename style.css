@@ -8,1007 +8,410 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html,
+body {
+    width: 100%;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: #0b365e;
     background: #ffffff;
-    overflow-x: hidden;
+    color: #082f5b;
 }
 
 a {
-    color: inherit;
     text-decoration: none;
-}
-
-img {
-    display: block;
-    max-width: 100%;
 }
 
 
 /* =====================================================
-   HEADER
+   CABEÇALHO
 ===================================================== */
 
-.header {
+.site-header {
     width: 100%;
     height: 86px;
-    background: #ffffff;
-    border-bottom: 1px solid #dce8f1;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #ffffff 70%,
+        #f2f8fd 100%
+    );
+
+    border-bottom: 1px solid #dbe8f2;
 }
+
+
+/* CONTAINER */
 
 .header-container {
-    width: 90%;
-    max-width: 1450px;
-    height: 100%;
-    margin: auto;
+    width: 92%;
+    max-width: 1500px;
+    height: 86px;
+
+    margin: 0 auto;
 
     display: flex;
     align-items: center;
 }
 
-.brand {
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo-area {
     display: flex;
     align-items: center;
-    gap: 12px;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
 }
 
-.brand img {
-    width: 68px;
-    height: 68px;
+
+/* IMPORTANTE:
+   controla a imagem para ela nunca ficar gigante
+*/
+
+.logo-area .logo-img {
+    display: block;
+
+    width: 76px !important;
+    height: 68px !important;
+
+    max-width: 76px !important;
+    max-height: 68px !important;
+
     object-fit: contain;
 }
 
-.brand-text {
+
+/* TEXTO AO LADO DA LOGO */
+
+.logo-text {
+    margin-left: 13px;
+
     display: flex;
     flex-direction: column;
+
+    justify-content: center;
 }
 
-.brand-text strong {
+
+/* PATRICIA SANTANA */
+
+.logo-name {
+    color: #073b73;
+
     font-family: Georgia, "Times New Roman", serif;
-    color: #073b70;
+
     font-size: 20px;
     font-weight: 600;
+
+    line-height: 1;
+
+    white-space: nowrap;
 }
 
-.brand-text span {
-    margin-top: 4px;
-    color: #087bcf;
+
+/* MINISTÉRIO APOSTÓLICO */
+
+.logo-ministry {
+    margin-top: 7px;
+
+    color: #087bc9;
+
     font-size: 7px;
-    font-weight: 700;
+    font-weight: 600;
+
     letter-spacing: 3px;
+
+    line-height: 1;
+
+    white-space: nowrap;
 }
 
-.nav {
+
+/* =====================================================
+   MENU
+===================================================== */
+
+.main-menu {
     margin-left: auto;
+
     display: flex;
     align-items: center;
-    gap: 24px;
+
+    gap: 23px;
 }
 
-.nav a {
-    height: 86px;
 
-    display: flex;
-    align-items: center;
+/* LINKS */
 
+.main-menu a {
     position: relative;
 
-    color: #082f55;
+    display: flex;
+    align-items: center;
+
+    height: 86px;
+
+    color: #082f58;
 
     font-size: 10px;
     font-weight: 500;
 
     text-transform: uppercase;
+
+    white-space: nowrap;
+
+    transition: color 0.2s ease;
 }
 
-.nav a:hover,
-.nav a.active {
+
+/* HOVER */
+
+.main-menu a:hover {
     color: #087dcc;
 }
 
-.nav a.active::after {
+
+/* LINK ATIVO */
+
+.main-menu a.active {
+    color: #087dcc;
+}
+
+
+/* LINHA AZUL ABAIXO DO INÍCIO */
+
+.main-menu a.active::after {
     content: "";
 
     position: absolute;
+
     left: 0;
     right: 0;
     bottom: 21px;
 
     height: 2px;
 
-    background: #0786db;
+    background: #087dcc;
 }
 
-.header-button {
+
+/* =====================================================
+   BOTÃO VER CURSOS
+===================================================== */
+
+.courses-button {
     width: 108px;
-    height: 43px;
+    height: 42px;
 
-    margin-left: 28px;
+    margin-left: 27px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    color: #ffffff;
-    background: #0874bd;
+    flex-shrink: 0;
 
-    border-radius: 5px;
-
-    font-size: 9px;
-    font-weight: 700;
-
-    text-transform: uppercase;
-
-    box-shadow: 0 7px 18px rgba(0, 78, 140, 0.16);
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero {
-    min-height: 760px;
-
-    position: relative;
-    overflow: hidden;
-
-    color: #ffffff;
-
-    background:
-        radial-gradient(
-            circle at 70% 48%,
-            rgba(39, 160, 235, 0.30),
-            transparent 30%
-        ),
-        linear-gradient(
-            110deg,
-            #021a33 0%,
-            #032b54 43%,
-            #075a99 74%,
-            #0c7abd 100%
-        );
-}
-
-.hero-container {
-    width: 86%;
-    max-width: 1450px;
-    min-height: 700px;
-
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    align-items: center;
-
-    gap: 80px;
-}
-
-.hero-content {
-    max-width: 700px;
-}
-
-.eyebrow {
-    margin-bottom: 23px;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 14px;
-    letter-spacing: 7px;
-}
-
-.hero h1 {
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(56px, 5vw, 83px);
-    font-weight: 400;
-    line-height: 0.98;
-
-    text-transform: uppercase;
-}
-
-.hero h1 span {
-    display: block;
-
-    margin-top: 8px;
-
-    color: #68c3fb;
-
-    font-size: 0.75em;
-}
-
-.subtitle {
-    margin-top: 27px;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 13px;
-    letter-spacing: 6px;
-}
-
-.divider {
-    width: 550px;
-    max-width: 100%;
-
-    margin: 27px 0;
-
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.divider span {
-    height: 1px;
-    flex: 1;
-
-    background: rgba(255, 255, 255, 0.45);
-}
-
-.divider i {
-    width: 14px;
-    height: 14px;
-
-    transform: rotate(45deg);
-
-    border: 1px solid #a7e0ff;
-
-    background: #1497e6;
-}
-
-blockquote {
-    width: 560px;
-    max-width: 100%;
-
-    text-align: center;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 18px;
-    font-style: italic;
-    line-height: 1.55;
-}
-
-blockquote small {
-    display: block;
-    margin-top: 6px;
-
-    font-size: 14px;
-}
-
-.hero-buttons {
-    margin-top: 32px;
-
-    display: flex;
-    gap: 15px;
-}
-
-.primary-button,
-.outline-button {
-    min-height: 52px;
-
-    padding: 0 28px;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    background: #0875bd;
 
     color: #ffffff;
 
     border-radius: 5px;
 
-    font-size: 10px;
-    font-weight: 700;
-
-    text-transform: uppercase;
-}
-
-.primary-button {
-    background: #0786d7;
-    border: 1px solid #48b9ff;
-}
-
-.outline-button {
-    gap: 28px;
-
-    background: rgba(0, 25, 50, 0.22);
-
-    border: 1px solid rgba(180, 225, 255, 0.8);
-}
-
-
-/* =====================================================
-   HERO DIREITA
-===================================================== */
-
-.hero-art {
-    min-height: 520px;
-
-    position: relative;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.circle {
-    position: absolute;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(170, 220, 255, 0.17);
-}
-
-.circle-one {
-    width: 440px;
-    height: 440px;
-}
-
-.circle-two {
-    width: 330px;
-    height: 330px;
-}
-
-.circle-three {
-    width: 220px;
-    height: 220px;
-}
-
-.hero-phrase {
-    position: relative;
-    z-index: 2;
-
-    text-align: center;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-style: italic;
-}
-
-.hero-phrase small {
-    display: block;
-
-    margin-bottom: 3px;
-
-    color: rgba(255, 255, 255, 0.72);
-
-    font-size: 15px;
-}
-
-.hero-phrase strong {
-    display: block;
-
-    color: #72c8ff;
-
-    font-size: 49px;
-    font-weight: 400;
-}
-
-.hero-phrase span {
-    display: block;
-
-    margin-top: 3px;
-
-    color: #ffffff;
-
-    font-size: 25px;
-}
-
-.hero-bottom {
-    position: absolute;
-
-    right: 5%;
-    bottom: 28px;
-
-    display: flex;
-    align-items: center;
-    gap: 15px;
-
-    color: rgba(255, 255, 255, 0.73);
-
-    font-family: Georgia, "Times New Roman", serif;
-
     font-size: 9px;
-    letter-spacing: 3px;
-}
-
-.hero-bottom i {
-    width: 1px;
-    height: 12px;
-
-    background: rgba(255, 255, 255, 0.4);
-}
-
-
-/* =====================================================
-   SECTION HEADING
-===================================================== */
-
-.section-heading {
-    text-align: center;
-}
-
-.section-heading > span {
-    display: block;
-
-    margin-bottom: 14px;
-
-    color: #0780cf;
-
-    font-size: 10px;
-    font-weight: 700;
-
-    letter-spacing: 4px;
-}
-
-.section-heading h2 {
-    color: #07365f;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: clamp(37px, 4vw, 52px);
-    font-weight: 400;
-    line-height: 1.12;
-}
-
-.section-heading h2 strong {
-    display: block;
-
-    color: #087dcf;
-
-    font-weight: 400;
-}
-
-.section-heading > i {
-    width: 50px;
-    height: 2px;
-
-    display: block;
-
-    margin: 23px auto 0;
-
-    background: #0785d8;
-}
-
-
-/* =====================================================
-   MINISTRY
-===================================================== */
-
-.ministry {
-    padding: 110px 20px;
-    background: #ffffff;
-}
-
-.ministry-grid {
-    width: 86%;
-    max-width: 1200px;
-
-    margin: 65px auto 0;
-
-    display: grid;
-    grid-template-columns: 1fr 0.85fr;
-
-    align-items: center;
-
-    gap: 90px;
-}
-
-.ministry-copy p {
-    margin-bottom: 18px;
-
-    color: #687c8f;
-
-    font-size: 15px;
-    line-height: 1.85;
-}
-
-.ministry-copy a {
-    display: inline-block;
-
-    margin-top: 7px;
-
-    color: #087dcc;
-
-    font-size: 11px;
-    font-weight: 700;
+    font-weight: 600;
 
     text-transform: uppercase;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
-.quote-card {
-    padding: 55px 48px;
 
-    position: relative;
-
-    background: #edf7fd;
-
-    border-left: 3px solid #0784d7;
-}
-
-.quote-card > span {
-    position: absolute;
-
-    top: 5px;
-    left: 25px;
-
-    color: rgba(7, 122, 203, 0.15);
-
-    font-family: Georgia, serif;
-
-    font-size: 90px;
-}
-
-.quote-card p {
-    position: relative;
-
-    color: #174d78;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 23px;
-    font-style: italic;
-    line-height: 1.5;
+.courses-button:hover {
+    background: #075f9c;
+    transform: translateY(-1px);
 }
 
 
 /* =====================================================
-   PILLARS
-===================================================== */
-
-.pillars {
-    padding: 110px 20px;
-
-    background: #f3f9fd;
-}
-
-.cards {
-    width: 90%;
-    max-width: 1320px;
-
-    margin: 60px auto 0;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 20px;
-}
-
-.card {
-    min-height: 320px;
-
-    padding: 34px 29px;
-
-    position: relative;
-
-    background: #ffffff;
-
-    border: 1px solid #dfebf3;
-}
-
-.card .number {
-    position: absolute;
-
-    top: 22px;
-    right: 24px;
-
-    color: rgba(6, 93, 157, 0.12);
-
-    font-family: Georgia, serif;
-
-    font-size: 41px;
-}
-
-.diamond {
-    margin-top: 30px;
-
-    color: #0782d4;
-
-    font-size: 25px;
-}
-
-.card h3 {
-    margin: 28px 0 16px;
-
-    color: #07375f;
-
-    font-family: Georgia, serif;
-
-    font-size: 27px;
-    font-weight: 400;
-}
-
-.card p {
-    color: #6b7e8f;
-
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-.blue-card {
-    color: #ffffff;
-
-    background: linear-gradient(
-        145deg,
-        #043463,
-        #0875bd
-    );
-
-    border: none;
-}
-
-.blue-card .number {
-    color: rgba(255, 255, 255, 0.15);
-}
-
-.blue-card .diamond {
-    color: #77caff;
-}
-
-.blue-card h3 {
-    color: #ffffff;
-}
-
-.blue-card p {
-    color: rgba(255, 255, 255, 0.78);
-}
-
-
-/* =====================================================
-   COURSES BANNER
-===================================================== */
-
-.courses-banner {
-    padding: 80px 7%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 50px;
-
-    color: #ffffff;
-
-    background: linear-gradient(
-        115deg,
-        #021d39,
-        #05477f,
-        #0877bb
-    );
-}
-
-.courses-banner > div > span {
-    display: block;
-
-    margin-bottom: 13px;
-
-    color: #70c8ff;
-
-    font-size: 10px;
-    font-weight: 700;
-
-    letter-spacing: 4px;
-}
-
-.courses-banner h2 {
-    max-width: 750px;
-
-    font-family: Georgia, serif;
-
-    font-size: clamp(35px, 4vw, 51px);
-    font-weight: 400;
-}
-
-.courses-banner h2 strong {
-    display: block;
-
-    color: #72c9ff;
-
-    font-weight: 400;
-}
-
-.courses-banner > a {
-    min-width: 200px;
-    min-height: 52px;
-
-    padding: 0 25px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #07538d;
-
-    background: #ffffff;
-
-    border-radius: 5px;
-
-    font-size: 10px;
-    font-weight: 700;
-
-    text-transform: uppercase;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-.footer {
-    background: #021b34;
-    color: #ffffff;
-}
-
-.footer-inner {
-    width: 90%;
-    max-width: 1300px;
-
-    margin: auto;
-
-    padding: 55px 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 40px;
-}
-
-.footer-brand {
-    display: flex;
-    align-items: center;
-
-    gap: 12px;
-}
-
-.footer-brand img {
-    width: 60px;
-    height: 60px;
-
-    object-fit: contain;
-}
-
-.footer-brand div {
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-brand strong {
-    font-family: Georgia, serif;
-    font-size: 18px;
-}
-
-.footer-brand span {
-    margin-top: 4px;
-
-    color: #6bc6ff;
-
-    font-size: 7px;
-    letter-spacing: 3px;
-}
-
-.footer-inner > p {
-    color: rgba(255, 255, 255, 0.55);
-
-    font-size: 12px;
-}
-
-.copyright {
-    padding: 18px;
-
-    text-align: center;
-
-    color: rgba(255, 255, 255, 0.4);
-
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-
-    font-size: 10px;
-}
-
-
-/* =====================================================
-   RESPONSIVO
+   TABLET
 ===================================================== */
 
 @media (max-width: 1100px) {
 
-    .brand-text {
-        display: none;
+    .header-container {
+        width: 95%;
     }
 
-    .nav {
-        gap: 15px;
+    .logo-area .logo-img {
+        width: 64px !important;
+        height: 60px !important;
+
+        max-width: 64px !important;
+        max-height: 60px !important;
     }
 
-    .nav a {
+    .logo-name {
+        font-size: 17px;
+    }
+
+    .logo-ministry {
+        font-size: 6px;
+        letter-spacing: 2px;
+    }
+
+    .main-menu {
+        gap: 14px;
+    }
+
+    .main-menu a {
         font-size: 9px;
     }
 
-    .header-button {
-        margin-left: 17px;
-    }
-
-    .hero-container {
-        grid-template-columns: 1fr;
-        padding: 70px 0 100px;
-
-        text-align: center;
-    }
-
-    .hero-content {
-        margin: auto;
-    }
-
-    .divider,
-    blockquote {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .hero-art {
-        min-height: 360px;
-    }
-
-    .ministry-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .cards {
-        grid-template-columns: repeat(2, 1fr);
+    .courses-button {
+        width: 95px;
+        margin-left: 18px;
     }
 
 }
 
 
-@media (max-width: 760px) {
+/* =====================================================
+   CELULAR
+===================================================== */
 
-    .header {
+@media (max-width: 820px) {
+
+    .site-header {
         height: auto;
     }
 
     .header-container {
-        min-height: 72px;
+        width: 92%;
+        height: auto;
+
+        min-height: 75px;
+
+        padding: 7px 0 13px;
+
         flex-wrap: wrap;
-
-        padding: 8px 0 13px;
     }
 
-    .brand img {
-        width: 55px;
-        height: 55px;
+
+    /* LOGO */
+
+    .logo-area .logo-img {
+        width: 58px !important;
+        height: 56px !important;
+
+        max-width: 58px !important;
+        max-height: 56px !important;
     }
 
-    .nav {
+    .logo-text {
+        margin-left: 8px;
+    }
+
+    .logo-name {
+        font-size: 15px;
+    }
+
+    .logo-ministry {
+        margin-top: 5px;
+
+        font-size: 5px;
+        letter-spacing: 1.8px;
+    }
+
+
+    /* BOTÃO */
+
+    .courses-button {
+        width: 88px;
+        height: 38px;
+
+        margin-left: auto;
+
+        font-size: 8px;
+    }
+
+
+    /* MENU */
+
+    .main-menu {
         width: 100%;
 
         order: 3;
 
-        margin-top: 10px;
+        margin-top: 7px;
+        margin-left: 0;
 
+        display: flex;
         justify-content: center;
         flex-wrap: wrap;
 
-        gap: 7px 17px;
+        gap: 5px 15px;
     }
 
-    .nav a {
-        height: auto;
-        padding: 5px 0;
+    .main-menu a {
+        height: 27px;
+
+        font-size: 8px;
     }
 
-    .nav a.active::after {
+    .main-menu a.active::after {
         bottom: 0;
     }
 
-    .header-button {
-        margin-left: auto;
+}
+
+
+/* =====================================================
+   CELULAR PEQUENO
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .logo-area .logo-img {
+        width: 50px !important;
+        height: 49px !important;
+
+        max-width: 50px !important;
+        max-height: 49px !important;
     }
 
-    .hero {
-        min-height: auto;
+    .logo-name {
+        font-size: 13px;
     }
 
-    .hero-container {
-        width: 88%;
-
-        min-height: auto;
-
-        padding: 65px 0 75px;
-
-        gap: 30px;
+    .logo-ministry {
+        font-size: 4.5px;
+        letter-spacing: 1.3px;
     }
 
-    .eyebrow {
-        font-size: 9px;
-        letter-spacing: 4px;
+    .courses-button {
+        width: 80px;
+        height: 35px;
+
+        font-size: 7px;
     }
 
-    .hero h1 {
-        font-size: clamp(40px, 12vw, 57px);
+    .main-menu {
+        gap: 4px 12px;
     }
 
-    .subtitle {
-        font-size: 9px;
-        letter-spacing: 3px;
-        line-height: 1.7;
-    }
-
-    blockquote {
-        font-size: 16px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .primary-button,
-    .outline-button {
-        width: 100%;
-    }
-
-    .hero-art {
-        min-height: 280px;
-    }
-
-    .circle-one {
-        width: 250px;
-        height: 250px;
-    }
-
-    .circle-two {
-        width: 190px;
-        height: 190px;
-    }
-
-    .circle-three {
-        width: 130px;
-        height: 130px;
-    }
-
-    .hero-phrase strong {
-        font-size: 38px;
-    }
-
-    .hero-phrase span {
-        font-size: 19px;
-    }
-
-    .hero-bottom {
-        display: none;
-    }
-
-    .ministry,
-    .pillars {
-        padding: 75px 20px;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .courses-banner {
-        padding: 65px 7%;
-
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .courses-banner > a {
-        width: 100%;
-    }
-
-    .footer-inner {
-        flex-direction: column;
-
-        text-align: center;
+    .main-menu a {
+        font-size: 7.5px;
     }
 
 }
